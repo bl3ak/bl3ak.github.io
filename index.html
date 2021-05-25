@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo</title>
+    <link href="css/estilos.css" rel="stylesheet">
+    <script type="module" src="cmp/mi-footer.js"></script>
+</head>
+
+<body>
+    <form id="forma" action="javascript:procesa()">
+        <h1>Saludo</h1>
+        <p>
+            <label>
+                Boleta
+                <input type="text" name="boleta">
+            </label>
+        </p>
+        <p>
+            <label>
+                Nombre
+                <input type="text" name="nombre">
+            </label>
+        </p>
+        <p>
+            <label>
+                Grupo
+                <input type="text" name="grupo">
+            </label>
+        </p>
+        <p>
+            <label>
+                Materia
+                <input type="text" name="materia">
+            </label>
+        </p>
+        <p>
+            <label accesskey="F">
+              <br>
+              <input name="fecha" type="date" autofocus required
+                     max="2022-01-24" min="2021-01-24">
+            </label>
+          </p>
+
+
+        <p><button>Calcular</button></p>
+
+        <br><output id="salidaBoleta"></output>
+        <br><output id="salidaNombre"></output>
+        <br><output id="salidaGrupo"></output>
+        <br><output id="salidaMateria"></output>
+        <br><output id="salidaFecha"></output>
+
+    </form>
+    <mi-footer></mi-footer>
+    <script src="js/CtrlSalida.js"></script>
+</body>
+
+</html>
