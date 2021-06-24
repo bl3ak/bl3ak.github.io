@@ -1,7 +1,7 @@
 class MiFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = /* html */
-            `Copyright &copy; 2021 Martinez Garcia Cristhian. (3CV50)`;
+            `Copyright &copy; Bl3ak`;
     }
 }
 customElements.define("mi-footer", MiFooter);
