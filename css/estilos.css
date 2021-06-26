@@ -1,20 +1,92 @@
 body {
-    font-family: sans-serif;
-    text-align: center;
-  }
-  
-  form {
-    display: inline-block;
-    text-align: start;
-  }
-  
-  p>label>* {
-    display: block;
-  }
-  
-  mi-footer {
-    display: block;
-    margin: 1rem 0;
-    font-size: small;
-  }
-  
+  background-color: #1C2833;
+  color: rgb(255, 255, 255);
+  margin: 1cm;
+  margin-right: 1cm;
+
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #202F40;
+  position: fixed; 
+  top: 0; 
+  width: 95%; 
+}
+.navbar a {
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.menu{
+  border: 1px solid red;
+}
+
+.informacion{
+  margin-top: 120px;
+  height: 500px;
+
+  width: 25%;
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
+
+.main {
+  padding: 15px;
+  margin-top: 120px;
+  height: 500px;
+  text-align: center;
+  width: 30%;
+  float: right;
+  padding: 15px;
+  border: 1px solid red;
+}
+.main:hover{
+  background-color: #25374A; 
+  color: white; 
+}
+
+
+
+.titulo{
+  position: relative;
+  bottom: 80px; left: 120px;
+  height: 0;
+  width: 0;
+}
+
+
+.imgLogo {
+  border-radius: 150px;
+  position: relative;
+  top: 2px; left: 10px;
+  height: 90px;
+  width: 90px;
+  top: 12;
+}
+
+
+.imgLinux{
+  border-radius: 150px;
+  float: ce;
+  height: 150px;
+  width: 150px;
+  top: 12;
+}
+
+
+iframe {
+  height: 200px;
+  width: 300px;
+}
+
+mi-footer {
+  display: block;
+  margin: 1rem 0;
+  font-size: small;
+}

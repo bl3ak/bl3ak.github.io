@@ -1,0 +1,40 @@
+body {
+  background-color: #212F3C;
+  /* background-color: #2C3E50; */
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  transition: background 0.s linear;
+}
+
+ul {
+  background-color: #2C3E50;
+}
+
+img {
+  position: relative;
+  bottom: 5px; right:5px;
+  border-radius: 150px;
+  align-items: left;
+  height: 190px;
+  width: 190px;
+  top: 12;
+  background: #111; 
+}
+
+
+
+.fa-linux {
+  color: #5da11c;
+}
+
+iframe {
+  height: 200px;
+  width: 300px;
+}
+
+mi-footer {
+  display: block;
+  margin: 1rem 0;
+  font-size: small;
+}
