@@ -1,9 +1,10 @@
 .containermansory {
     position: relative;
-    right: 70px;
+
+
     float: right;
     
-    max-width: 80%;
+    max-width: 100%;
     /*numero de cuadro 3 cuadros*/
     display: grid;
     min-height: 200vh;
