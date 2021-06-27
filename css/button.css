@@ -7,9 +7,10 @@
   margin-top: 1rem;
   float: right;
   text-decoration: none;
+  
 }
 
-a{
+.amenu{
 
   position: relative;
   top: 9px; right: 70px;
@@ -24,8 +25,9 @@ a{
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+  /* border: 1px solid tomato */
 }
-.a::after{
+.amenu::after{
   content: '';
   position: absolute;
   width: 100%;
@@ -35,7 +37,7 @@ a{
   background-color: #39ff14;
 
 }
-.a-center::after{
+ .a-center::after{
   transform: scale(0, 1);
   transition: transform 0.3s ease;
 }
