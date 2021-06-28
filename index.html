@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HackSheet Bl3Ak</title>
+    <title class="fab fa-linux">HackSheet Bl3Ak</title>
     <link href="css/estilos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/masonry.css">
+    <link href="css/masonry.css" rel="stylesheet" >
     <link href="css/button.css" rel="stylesheet">
     <script type="module" src="cmp/mi-footer.js"></script>
     <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
@@ -16,46 +16,36 @@
 
 <body>
 
-    <!-- <div class="containermenu">
-        <div class="grid-item item1">1</div>
 
-    </div> -->
+    <header>
+        <img src="images/logo.gif" class="imglogo" alt="">
+        <a href="" class="logo">HackSheet</a>
+        <div class="menu-toggle "></div>
+        <nav>
+            <ul>
+                        <li><a href="" class="linea-center"><b>Home</b></a> </li>
+                        <li><a href="" class="linea-center">home</a> </li>
+                        <li><a href="" class="linea-center">about</a></li>
+                        <li><a href="" class="linea-center">search</a></li>
+                        <li><a href="">search</a></li>
+                        <li><a href="">search</a></li>
+                        <li><a href="">search</a></li>
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
 
-
-
-    <!-- <div class="navbar menu">
-        <a href="#" class="fas fa-home amenu a-center">
-            <span> </span>
-            <span> </span>
-            <span> </span>
-            <span> </span>
-            neon
-        </a>
-
-        <a href="#" class="fas fa-home amenu a-center">
-            <span> </span>
-            <span> </span>
-            <span> </span>
-            <span> </span>
-            neon1
-        </a>
-        <img class="imgLogo" src="images/logo.gif" alt="">
-    <h3 class="titulo">HackSheet</h3>
-        
-    </div> -->
-
- 
-
-    <!-- <div class="grid-container">
-        <div class="grid-item item1">1</div>
-        <div class="grid-item item2">2</div>
-        <div class="grid-item item3">3</div>  
-        <div class="grid-item item4">4</div>
-        <div class="grid-item item5">5</div>
-      </div> -->
-
-
-
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
 
 
 
@@ -63,7 +53,7 @@
         <div class="box">
             <a href="linux.html ">
                 <div class="content">
-                    <img src="images/15.jpg">
+                    <img src="images/linux.png">
                     <h3>
                         linux
                     </h3>
@@ -80,7 +70,7 @@
         <div class="box">
             <a href="#">
                 <div class="content">
-                    <img src="images/14.jpg">
+                    <img src="images/network.png">
                     <h3>
                         Network
                     </h3>
@@ -97,7 +87,7 @@
         <div class="box">
             <a href="#">
                 <div class="content">
-                    <img src="images/15.jpg">
+                    <img src="images/bash.png">
                     <h3>
                         Bash
                     </h3>

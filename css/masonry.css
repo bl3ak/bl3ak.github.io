@@ -1,13 +1,10 @@
 .containermansory {
     position: relative;
-
-
     float: right;
-    
     max-width: 100%;
     /*numero de cuadro 3 cuadros*/
     display: grid;
-    min-height: 200vh;
+    min-height: 150vh;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-template-rows: minmax(100px, auto);
     margin: 40px;
@@ -57,6 +54,7 @@
     .containermansory {
         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
         grid-template-rows: minmax(auto, auto);
+        text-size-adjust: auto;
     }
     .containermansory .box {
         grid-column: unset !important;
