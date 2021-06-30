@@ -8,7 +8,7 @@ header {
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.342);
   /* sobreado sde barra*/
-  /* border: solid tomato; */
+  /* border: solid tomato;*/
 }
 
 .imglogo {
@@ -42,6 +42,7 @@ nav {
 }
 
 nav ul {
+  position: flex;
   margin: 0;
   padding: 0;
   display: flex;
@@ -58,9 +59,7 @@ nav ul li a {
   text-decoration: none;
   color: #ffffff;
   font-size: 25px;
-  /* border: 1px solid tomato */
 }
-
 
 .linea-center::after {
   content: '';
@@ -77,9 +76,6 @@ nav ul li a {
 .linea-center:hover::after {
   transform: scale(1, 2);
 }
-
-
-
 
 @media(max-width: 991px) {
   header {

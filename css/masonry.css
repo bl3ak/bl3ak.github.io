@@ -1,5 +1,5 @@
 .containermansory {
-    position: relative;
+    /* position: relative; */
     float: right;
     max-width: 100%;
     /*numero de cuadro 3 cuadros*/
@@ -10,7 +10,7 @@
     margin: 40px;
     grid-auto-flow: dense;
     grid-gap: 10px;
-    padding-top: 10px;
+    padding-top: 100px;
     /* espacio abajo menu*/
 }
 
@@ -32,7 +32,7 @@
 }
 
 .containermansory .box img {
-    position: relative;
+    /* position: relative; */
     max-width: 100px;
     margin-bottom: 50px;
     border-radius: 50%;
