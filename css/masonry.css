@@ -16,7 +16,9 @@
 
 .containermansory .box {
     color: #ffffff;
-    background-color: #1c2533;
+    border-radius: 4px;
+    /* box-shadow: 0 0px 5px #fdfdfd; */
+
     padding: 20px;
     display: grid;
     font-size: 20px;
@@ -24,11 +26,12 @@
     text-align: center;
     color: rgb(255, 255, 255);
     transition: 0.5s;
-    border: 1px solid tomato
+    /* border: 1px solid tomato */
 }
 
 .containermansory .box:hover {
-    background-color: #25374A;
+    /* background-color: #1E3345; */
+    box-shadow: 0 0px 5px #39ff14;
 }
 
 .containermansory .box img {

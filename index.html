@@ -7,8 +7,8 @@
     <title class="fab fa-linux">HackSheet Bl3Ak</title>
     <link href="css/estilos.css" rel="stylesheet">
     <link href="css/masonry.css" rel="stylesheet"> 
-    <!-- <link href="css/button.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="css/pureba.css">
+    <link href="css/button.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/pureba.css"> -->
     <script type="module" src="cmp/mi-footer.js"></script>
     <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
 
@@ -16,23 +16,6 @@
 </head>
 
 <body>
-
-
-
-
-    <!-- <header> -->
-        <!-- <img src="images/logo.gif" class="imglogo" alt=""> -->
-        <!-- <a href="" class="logo">HackSheet</a>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </header>
-
-    <section class="banner"></section> -->
-
-
     <header class="navbar">
         <img src="images/logo.gif" class="imglogo" alt="">
         <a href="" class="logo">HackSheet</a>
@@ -45,6 +28,18 @@
         </nav>
         <div class="clearfix"></div>
     </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
 
 
 
