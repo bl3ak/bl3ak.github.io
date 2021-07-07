@@ -1,10 +1,8 @@
 .main {
     margin: 40px;
-    padding-top: 100px;    
+    padding-top: 100px;
     /* font-size: 1vw; */
-
 }
-
 
 h1 {
     color: #ff073a;
@@ -16,9 +14,7 @@ h1 {
     padding: 0;
     margin-left: 10px;
     font-size: 120%;
-
 }
-
 
 .main ul li::before {
     font-family: fontawesome;
@@ -34,26 +30,28 @@ h1 {
     color: #00FFFF;
     font-weight: 900;
 }
-.comando2{
+
+.comando2 {
     color: #FF1EB7;
     font-weight: 900;
 }
 
-.main ul li ol li{
+.main ul li ol li {
     list-style: none;
 }
-.main ul li ol li::before{
+
+.main ul li ol li::before {
     content: "-";
     font-weight: 600;
     letter-spacing: 0.2em;
     font-size: 120%;
-
 }
-.subcomando{
+
+.subcomando {
     color: #000;
 }
 
-.linux{
+.linux {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -61,11 +59,27 @@ h1 {
     margin-bottom: 50px;
     border-radius: 50%;
 }
-.fylesystem{
+
+
+.fylesystem {
     display: block;
-    margin-left: auto;    
+    margin-left: auto;
     margin-right: auto;
     max-width: 50%;
+}
 
-
+@media (max-width: 991px) {
+    .fylesystem {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 50%;
+        transition: transform .2s;
+    }
+    
+    .fylesystem:hover {
+        -ms-transform: scale(2);
+        -webkit-transform: scale(2);
+        transform: scale(2);
+    }
 }
