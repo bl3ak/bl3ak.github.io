@@ -1,7 +1,6 @@
 .main {
     margin: 40px;
     padding-top: 100px;
-    /* font-size: 1vw; */
 }
 
 h1 {
@@ -13,7 +12,6 @@ h1 {
     list-style: none;
     padding: 0;
     margin-left: 10px;
-    font-size: 120%;
 }
 
 .main ul li::before {
