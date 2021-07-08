@@ -25,12 +25,16 @@ h1 {
 }
 
 .comando1 {
-    color: #00FFFF;
+    color: #ff2c87;
     font-weight: 900;
 }
 
 .comando2 {
-    color: #FF1EB7;
+    color: #00ffff;
+    font-weight: 900;
+}
+.comando3 {
+    color: #02fda4;
     font-weight: 900;
 }
 
@@ -41,7 +45,7 @@ h1 {
 .main ul li ol li::before {
     content: "-";
     font-weight: 600;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
     font-size: 120%;
 }
 
@@ -59,7 +63,7 @@ h1 {
 }
 
 
-.fylesystem {
+.image {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -67,7 +71,14 @@ h1 {
 }
 
 @media (max-width: 991px) {
-    .fylesystem {
+    .main {
+        margin: 15px;
+        padding-top: 100px;
+    }
+    .comando2 {
+        font-weight: 700;
+    }
+    .image {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -75,7 +86,7 @@ h1 {
         transition: transform .2s;
     }
     
-    .fylesystem:hover {
+    .image:hover {
         -ms-transform: scale(2);
         -webkit-transform: scale(2);
         transform: scale(2);

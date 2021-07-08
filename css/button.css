@@ -107,7 +107,7 @@ nav ul li a {
       cursor: pointer;
       text-align: center;
       font-size: 30px;
-      color: #069370;
+      color: #3dcbe1;
   }
   .menu-toggle:before {
       content: '\f0c9';

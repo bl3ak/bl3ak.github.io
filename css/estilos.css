@@ -1,7 +1,7 @@
 
 body {
   background-color: #042025;;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   justify-content: center;
   align-self: center;
   font-size: 1.2vw;
@@ -16,6 +16,6 @@ mi-footer {
 
 @media (max-width: 991px) {
   body{
-    font-size: 2.1vw;
+    font-size: 2.6vw;
   }
 }
