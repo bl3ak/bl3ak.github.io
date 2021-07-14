@@ -73,6 +73,7 @@ nav ul li a {
   height: 0.175rem;
   float: right;
   background: #14FF18;
+
   transform: scale(0, 1);
   transition: transform 0.3s ease;
 }
