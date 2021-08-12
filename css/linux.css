@@ -37,7 +37,10 @@ h1 {
     color: #02fda4;
     font-weight: 900;
 }
-
+.pasos {
+    color: #fdf902;
+    font-weight: 900;
+}
 .main ul li ol li {
     list-style: none;
 }
