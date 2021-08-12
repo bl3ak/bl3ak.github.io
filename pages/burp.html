@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="" href="">
+    <link href="/css/estilos.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
+    <link href="/css/linux.css" rel="stylesheet">
+    <script type="module" src="/cmp/mi-footer.js"></script>
+    <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="/images/logo.gif" class="imglogo" alt="logotipo">
+        <a href="" class="logo">HackSheet</a>
+        <div class="menu-toggle "></div>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="linea-center">Home</a> </li>
+
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+
+
+    <div class="main">
+        <img class="linux" src="/images/burp.png" alt="LogoBurpSuite">
+        <h1> BurpSuite</h1>
+        <ul>
+            <li><span class="comando1">Instalacion</span>
+                <ol>
+                    <li><span class="comando2">https://portswigger.net/burp/communitydownload</span>: descarga.</li>
+                    <li><span class="comando2">https://www.java.com/en/download/ </span>: requiere de java para
+                        ejecutarse.</li>
+                    <li><span class="comando2">https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/</span>: requiere de un proxy.
+                    
+                    <ol>
+                        <li><span class="comando3"> Nombre: burp suite </span></li>
+                        <li><span class="comando3"> Proxy Type: HTTP </span></li>
+                        <li><span class="comando3"> Proxy IP address: 127.0.0.1 </span></li>
+                        <li><span class="comando3"> Port: 8080 </span></li>
+                    </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li><span class="comando1">Lanzamiento de Burp Suite</span>
+            <ol>
+                <li><span class="comando2">temporary proyect y next </span></li>
+                <li><span class="comando2">nos preguntara la configuracion y le damos default y le damos en iniciar.</span></li>
+            </ol>
+            
+            <li><span class="comando1">Proxy</span>: Lo que nos permite canalizar el tráfico a través de Burp Suite para su posterior análisis.
+            <ol>
+                <li><span class="comando2"></span></li>
+            
+            </ol>
+            
+            </li>
+            
+                       
+            
+            <li><span class="comando1">target</span>: Cómo establecemos el alcance de nuestro proyecto. También podemos usarlo para crear efectivamente un mapa del sitio de la aplicación que estamos probando.</li>
+            <li><span class="comando1">Intruder</span>: Herramienta increíblemente poderosa para todo, desde fuzzing de campo hasta relleno de credenciales y más.</li>
+            <li><span class="comando1">Repeater</span>: Nos permite "repetir" peticiones que se han hecho previamente con o sin modificación. A menudo se utiliza como paso previo al fuzzing con el ya mencionado Intruder.</li>
+            <li><span class="comando1">Sequencer</span>: Analiza la "aleatoriedad random" presente en partes de la aplicación web que están destinadas a ser impredecibles. Se suele utilizar para probar las cookies de sesión..</li>
+            <li><span class="comando1">Decoder</span>: Como su nombre indica, el decodificador es una herramienta que nos permite realizar varias transformaciones en piezas de datos. Estas transformaciones varían desde la decodificación/codificación a varias bases o codificación de URLs.</li>
+            <li><span class="comando1">Comparer</span>: es una herramienta que podemos utilizar para comparar diferentes respuestas u otros datos como mapas del sitio o historiales de proxy (impresionante para probar problemas de control de acceso). Es muy similar a la herramienta diff de Linux..</li>
+            <li><span class="comando1">Extender</span>: De forma similar a la adición de mods a un juego como Minecraft, Extender nos permite añadir componentes como integraciones de herramientas, definiciones de escaneo adicionales, y mucho más!.</li>
+            <li><span class="comando1">Scanner</span>: scáner de vulnerabilidad web automatizado que puede resaltar áreas de la aplicación para una mayor investigación manual o una posible explotación con otra sección de Burp. Esta característica, aunque no está en la edición comunitaria de Burp Suite, sigue siendo una faceta clave para realizar una prueba de aplicaciones web.</li>
+
+
+
+
+
+        </ul>
+    </div>
+
+
+
+    <mi-footer></mi-footer>
+</body>
+
+</html>
