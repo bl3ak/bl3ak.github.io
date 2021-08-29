@@ -39,12 +39,13 @@
         })
     </script>
 
-
     <div class="main">
         <img class="linux" src="/images/burp.png" alt="LogoBurpSuite">
         <h1> Burp Suite</h1>
+
         <ul>
             <li><span class="comando1">Instalacion</span>
+
                 <ol>
                     <li><span class="comando2">https://portswigger.net/burp/communitydownload</span>: descarga.</li>
                     <li><span class="comando2">https://www.java.com/en/download/ </span>: requiere de java para
@@ -61,15 +62,20 @@
                         </ol>
                     </li>
                 </ol>
+
             </li>
 
             <li><span class="comando1">Lanzamiento de Burp Suite</span>
                 <ol>
                     <li><span class="comando2">temporary proyect y next </span></li>
-                    <li><span class="comando2">nos preguntara la configuracion y le damos default y le damos en
-                            iniciar.</span></li>
+                    <li><span class="comando2">nos preguntara la configuracion y le damos default y le damos
+                            eniniciar.</span></li>
                 </ol>
-                <br>
+            </li>
+            <br>
+
+
+
             <li><span class="comando1">Proxy</span>: Lo que nos permite canalizar el tráfico a través de Burp Suite para
                 su posterior análisis.
                 <ol>
@@ -90,11 +96,15 @@
                                 que necesitemos navegar sin interceptar) ya que no perturbara los sitios que estan fuera
                                 de nuestro alcance, es bueno activarlo si nesesitamos algo de google en el mismo
                                 navegador.</li>
-                            <li><span class="comando3">si tenemos problemas lo deshabilitamos el AND y lo enviamos directamente con forward, para tener habilitado todas las opciones de intercept</span></li>
+                            <li><span class="comando3">si tenemos problemas lo deshabilitamos el AND y lo enviamos
+                                    directamente con forward, para tener habilitado todas las opciones de
+                                    intercept</span></li>
                         </ol>
                     </li>
                 </ol>
             </li>
+
+
             <br>
             <li><span class="comando1">Target</span>: Cómo establecemos el alcance de nuestro proyecto. También podemos
                 usarlo para crear efectivamente un mapa del sitio de la aplicación que estamos probando.
@@ -113,9 +123,9 @@
                 </ol>
             </li>
 
-
-
             <br>
+
+
             <li><span class="comando1">Intruder</span>: Herramienta increíblemente poderosa para todo, desde fuzzing de
                 campo hasta relleno de credenciales y más.
                 <ol>
@@ -169,7 +179,6 @@
 
             </li>
 
-
             <br>
             <li><span class="comando1">Repeater</span>: Nos permite "repetir" peticiones que se han hecho previamente
                 con o sin modificación. A menudo se utiliza como paso previo al fuzzing con el ya mencionado Intruder.
@@ -182,6 +191,9 @@
 
 
             </li>
+
+
+
             <br>
             <li><span class="comando1">Sequencer</span>: Analiza la "aleatoriedad random" presente en partes de la
                 aplicación web que están destinadas a ser impredecibles. Se suele utilizar para probar las cookies de
@@ -226,10 +238,6 @@
 
             </li>
 
-
-
-
-
             <li><span class="comando1">Decoder</span>: Como su nombre indica, el decodificador es una herramienta que
                 nos permite realizar varias transformaciones en piezas de datos. Estas transformaciones varían desde la
                 decodificación/codificación a varias bases o codificación de URLs.
@@ -250,7 +258,7 @@
                     <li><span class="comando2">y vemos que se decodifico el %20 a space que es el codigo ascii
                             http://10.10.46.251/api/Challenges/?name=Score Board</span></li>
                     <li><span class="comando2">tambien se puede intentar en:
-                            https://gchq.github.io/CyberChef/#recipe=URL_Decode()&input=aHR0cDovLzEwLjEwLjQ2LjI1M></span>
+                            https://gchq.github.io/CyberChef></span>
                     </li>
                     <li><span class="comando2">pegamos la URL</span></li>
                     <li><span class="comando2">perations buscamos URL Decoder</span></li>
@@ -258,7 +266,6 @@
                         </span></li>
                 </ol>
             </li>
-
 
 
 
@@ -276,11 +283,9 @@
                 faceta clave para realizar una prueba de aplicaciones web.</li>
 
 
-
-
-
         </ul>
     </div>
+
 
 
 
@@ -288,3 +293,4 @@
 </body>
 
 </html>
+
