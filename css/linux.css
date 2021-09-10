@@ -44,6 +44,10 @@ h1 {
 .main ul li ol li {
     list-style: none;
 }
+a{
+    color: #ff2c87;
+    font-weight: 900;
+}
 
 .main ul li ol li::before {
     content: "-";
