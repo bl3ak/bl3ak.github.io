@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="icon" href="/images/logo.ico">
+    <link href="/css/estilos.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
+    <link href="/css/linux.css" rel="stylesheet">
+    <script type="module" src="/cmp/mi-footer.js"></script>
+    <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <img src="/images/logo.gif" class="imglogo" alt="logotipo">
+        <a href="/index.html" class="logo">HackSheet</a>
+        <div class="menu-toggle "></div>
+        <nav>
+            <ul>
+                <li><a href="/index.html" class="linea-center">Home</a> </li>
+
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('.menu-toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+
+
+    <div class="main">
+        <img class="linux" src="/images/shell.png" alt="Reverse Shell">
+        <h1> Reverse shells</h1>
+        <ul>
+
+            <li><span class="comando1">Tipos de reverse shell </span>
+
+                <ol>
+                    <li><span class="comando2">Netcat</span>: la navaja suiza de la redes.</li>
+                    <li><span class="comando2">Socat</span>: la navaja suiza de la redes con asteroides.</li>
+                    <li><span class="comando2">auxiliary/multi/handler</span>: modulo de metasploit.</li>
+                    <li><span class="comando2">/usr/share/webshells</span>: WebShells de kali linux.</li>
+                    <li><a href="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet"
+                            target="_blank"><span class="comando1"></span>
+                            Reverse Shell</span></a>: pentestmonkey.</li>
+                    <li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md"
+                            target="_blank"><span class="comando1"></span>
+                            Reverse Shell Cheat Sheet</span></a>: Contiene reverse Shells.</li>
+                    <li><a href="https://github.com/danielmiessler/SecLists/tree/master/Web-Shells"
+                            target="_blank"><span class="comando1"></span>
+                            SecLists</span></a>: repositorio donde tambien contiene reverse Shells.</li>
+
+
+
+                </ol>
+            </li>
+            <li><span class="comando1">#</span>: super usuario.</li>
+            <li><span class="comando1">pwd</span>: directorio de trabajo actual.</li>
+            <li><span class="comando1">which</span>: localiza la ruta de los archivos ejecutables.</li>
+
+            <li><span class="comando1">ps</span>: muestra los procesos que se están ejecutando.
+                <ol>
+                    <li><span class="comando2">Los números 3-5 digitos que aparece en la segunda columna se le conoce
+                            como process ID(PID)</span></li>
+                    <li><span class="comando2">-ef</span>: listar todos los procesos del sistema </li>
+                </ol>
+            </li>
+            <li><span class="comando1">kill&lt;PID&gt;</span>: mata procesos.</li>
+
+
+
+
+
+
+
+        </ul>
+    </div>
+
+
+
+    <mi-footer></mi-footer>
+</body>
+
+</html>

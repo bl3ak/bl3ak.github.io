@@ -114,9 +114,9 @@
             <li><span class="comando1">nmap --script=discovery&lt;target&gt;</span>: intento de consultar los servicios
                 en ejecución para obtener mas informacion sobre la red.</li>
             <li><span class="comando2">nmap -p- --open -T5 -v -n &lt;target&gt;</span>: escaneo "lento y rapido".</li>
-            <li><span class="comando2">nmap -p- -sS --min-rate 5000 --open -vvv -n -Pn &lt;target&gt; -oN &lt;name
+            <li><span class="comando2">nmap -p- -sS --min-rate 5000 --open -vvv -n -Pn &lt;target&gt; -oG &lt;name
                     file&gt;</span>: escaneo mucho mas rapido.</li>
-            <li><span class="comando2">nmap -sC -sV -p&lt;ports&gt;</span>: lanzar scripts basicos de reconocimiento y detectar la version de servicios que corre en los puertos.</li>
+            <li><span class="comando2">nmap -sC -sV -p&lt;ports&gt; -oN &lt;file&gt;</span>  : lanzar scripts basicos de reconocimiento y detectar la version de servicios que corre en los puertos.</li>
 
                     
             <li><span class="comando1">Whatweb&lt;target&gt;</span>: capaz de reconocer las tecnologias utilizadas para sitios web direcciones de correo, web frameforks y base de datos. .</li>

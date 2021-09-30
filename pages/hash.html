@@ -45,14 +45,14 @@
         <h1> Linea de comandos Hash</h1>
         <ul>
             <li><span class="comando1">Get-FileHash &lt; ruta del archivo&gt; -Algorithm &lt; tipo de hash&gt;</span>:
-                Comprobacion de descarga por medio de autentificacion hash, mediante Windows. 
+                Comprobacion de descarga por medio de autentificacion hash, mediante Windows.
                 <ol>
                     <li><span class="comando2">SHA1</span></li>
                     <li><span class="comando2">SHA256</span></li>
                     <li><span class="comando2">SHA384</span></li>
                     <li><span class="comando2">SHA512</span></li>
                     <li><span class="comando2">MD5F</span></li>
-                    <span class="pasos">El Comando se debe de ejecutar en porwer Shell</span>                                                 
+                    <span class="pasos">El Comando se debe de ejecutar en porwer Shell</span>
                 </ol>
             </li>
             <li><span class="comando1">$</span>: usuario normal.</li>
@@ -75,9 +75,41 @@
                     <li><span class="comando2">-l</span>: muestra los archivos en formato de lista. </li>
                 </ol>
             </li>
-            <li><a href="https://crackstation.net/" target="_blank"><span class="comando1" ></span> crackstation</span></a>: sitio web para descifrar hashes.</li>
             <li><span class="comando1">hash-identifier &lt; hash &gt;</span>: identificar el tipo de hash que es.</li>
-            <li> <a href="https://gchq.github.io/CyberChef/" target="_blank"><span >CyberChef</span></a>: desencriptacion.</li>
+            <li><a href="https://crackstation.net/" target="_blank"><span class="comando1"></span>
+                    crackstation</span></a>: sitio web para descifrar hashes.</li>
+            <li> <a href="https://gchq.github.io/CyberChef/" target="_blank"><span>CyberChef</span></a>:
+                desencriptacion.</li>
+            <li><span class="comando1">John The Riper</span>
+                <ol>
+                    <li><span class="comando2">sudo apt install john</span>: instalacion de john the riper</li>
+                    <li><span class="comando2">/usr/share/wordlists </span>: diccionario de palabras.</li>
+                    <span class="pasos">Cracking hashes</span>
+                    <li><span class="comando2"> john [options] [path to file]</span>
+                        <ol>
+                            <li> <span class="comando3">john --wordlist=/usr/share/wordlists/rockyou.txt
+                                    hash_to_crack.txt </span>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><span class="comando2">john --list=formats | grep -iF "hash" </span>buscar el formato correcto del hast
+                    <ol>
+                        <li>
+                            <span class="comando3">john --list=formats | grep -iF "md5".</span>
+                        </li>
+                    </ol>
+                    </li>
+                   
+                    <li><span class="comando2"> john --format=[format] --wordlist=[path to wordlist] [path to file]</span>
+                        <ol>
+                            <li> <span class="comando3">john --format = raw-md5 --wordlist = / usr / share / wordlists / rockyou.txt hash_to_crack.txt </span>
+                            </li>
+                        </ol>
+                    </li>
+
+                </ol>
+
+            </li>
         </ul>
     </div>
 

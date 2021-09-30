@@ -23,6 +23,26 @@ h1 {
     line-height: 1cm;
     font-size: 50%;
 }
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:active {
+    color: #3BFFF8;
+    background-color: transparent;
+    text-decoration: underline;
+  }
 
 .comando1 {
     color: #ff2c87;
