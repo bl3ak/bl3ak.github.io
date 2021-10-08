@@ -23,25 +23,25 @@ h1 {
     line-height: 1cm;
     font-size: 50%;
 }
-.enlace{
+
+.enlace {
     color: rgb(15, 253, 201);
     background-color: transparent;
     text-decoration: none;
     font-weight: 900;
-  }
+}
 
 .enlace:hover {
     color: rgb(122, 6, 255);
     background-color: transparent;
     font-weight: 900;
+}
 
-  }
 .enlace:active {
     color: #48ff00;
     background-color: transparent;
     font-weight: 900;
-
-  }
+}
 
 .comando1 {
     color: #ff2c87;
@@ -52,29 +52,30 @@ h1 {
     color: #00ffff;
     font-weight: 900;
 }
+
 .comando3 {
     color: #02fda4;
     font-weight: 900;
 }
-.comando4{
+
+.comando4 {
     background-color: #000000;
     font-weight: 900;
 }
-.comando5{
+
+.comando5 {
     background-color: #ff073a;
     font-weight: 900;
 }
-
 
 .pasos {
     color: #fdf902;
     font-weight: 900;
 }
+
 .main ul li ol li {
     list-style: none;
 }
-
-
 
 .main ul li ol li::before {
     content: "-";
@@ -94,6 +95,11 @@ h1 {
     max-width: 100px;
     margin-bottom: 50px;
     border-radius: 50%;
+}
+
+.llave {
+    font-weight: 900;
+    color: #0e69d1;
 }
 
 
@@ -119,7 +125,6 @@ h1 {
         max-width: 50%;
         transition: transform .2s;
     }
-    
     .image:hover {
         -ms-transform: scale(2);
         -webkit-transform: scale(2);
