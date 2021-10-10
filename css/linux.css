@@ -102,9 +102,9 @@ h1 {
     color: #0e69d1;
 }
 
-.tux{
-
-    
+.bash{
+    width: 30px;
+    object-position: 0px 25%;
 }
 .image {
     display: block;
