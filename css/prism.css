@@ -240,9 +240,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button {
     line-height: normal;
     overflow: hidden;
     padding: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+
 }
 
 div.code-toolbar>.toolbar>.toolbar-item>a, div.code-toolbar>.toolbar>.toolbar-item>button, div.code-toolbar>.toolbar>.toolbar-item>span {
