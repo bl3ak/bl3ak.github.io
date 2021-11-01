@@ -17,7 +17,7 @@ code[class*=language-], pre[class*=language-] {
     -moz-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;
-    z-index: -1;
+    z-index: -10;
 }
 
 pre[class*=language-] {
@@ -26,17 +26,23 @@ pre[class*=language-] {
     /* scroll */
     overflow: hidden;
     border-radius: .3em;
+    z-index: -1;
+
 }
 
 :not(pre)>code[class*=language-], pre[class*=language-] {
-    background: #2A3A49;
+    background: #1d344b;
     width: 85%;
+    z-index: -1;
+
 }
 
 :not(pre)>code[class*=language-] {
     padding: .1em;
     border-radius: .3em;
     white-space: normal;
+    z-index: -1;
+
 }
 
 .token.cdata, .token.comment, .token.doctype, .token.prolog {
@@ -53,6 +59,7 @@ pre[class*=language-] {
 
 .token.constant, .token.deleted, .token.property, .token.symbol, .token.tag {
     color: #5efc8d
+    
 }
 
 .token.boolean, .token.number {
@@ -60,21 +67,21 @@ pre[class*=language-] {
 }
 
 .token.attr-name, .token.builtin, .token.char, .token.inserted, .token.selector, .token.string  {
-    color: #dfebd9
+    color: #d9ebe1
 }
 
 
 
 .token.token.attr-name, .token.punctuation{
-    color: #8342fc;
+    color: #e26565
 }
 
 .language-css .token.string, .style .token.string, .token.entity, .token.operator, .token.url, .token.variable {
-    color: #06f3b8
+    color: #5CE1E6
 }
 
 .token.atrule, .token.attr-value, .token.class-name, .token.function {
-    color: #ef9cda;
+    color: #FF66C4
 }
 
 .token.keyword {
@@ -109,16 +116,18 @@ pre[data-line] {
     padding: inherit 0;
     margin-top: 1em;
     background: hsla(24, 20%, 50%, .08);
-    background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+    background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 88%, 50%, 0));
     pointer-events: none;
     line-height: inherit;
     white-space: pre;
+    
 }
 
 @media print {
     .line-highlight {
         -webkit-print-color-adjust: exact;
         color-adjust: exact;
+        
     }
 }
 
@@ -137,6 +146,7 @@ pre[data-line] {
     border-radius: 999px;
     text-shadow: none;
     box-shadow: 0 1px rgb(255, 2, 2);
+    
 }
 
 .line-highlight[data-end]:after {
@@ -240,7 +250,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button {
     line-height: normal;
     overflow: hidden;
     padding: 0;
-
+    
 }
 
 div.code-toolbar>.toolbar>.toolbar-item>a, div.code-toolbar>.toolbar>.toolbar-item>button, div.code-toolbar>.toolbar>.toolbar-item>span {
@@ -251,6 +261,7 @@ div.code-toolbar>.toolbar>.toolbar-item>a, div.code-toolbar>.toolbar>.toolbar-it
     /* background: rgba(224, 224, 224, .2); */
     box-shadow: 0 2px 0 0 rgba(0, 0, 0, .2);
     border-radius: .5em;
+
 }
 
 div.code-toolbar>.toolbar>.toolbar-item>a:focus, 
@@ -262,4 +273,5 @@ div.code-toolbar>.toolbar>.toolbar-item>span:focus
     color: inherit;
     text-decoration: none;
     color: #06f306;
+
 }

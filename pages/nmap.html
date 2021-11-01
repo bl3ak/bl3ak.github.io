@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="stylesheet" href="/css/prism.css">
+
     <link rel="icon" href="/images/logo.ico">
     <link href="/css/estilos.css" rel="stylesheet">
     <link href="/css/button.css" rel="stylesheet">
@@ -48,12 +50,14 @@
             <li><span class="comando1">1024</span>: puertos que se consideran conocidos.</li>
             <li><span class="comando1">nmap -sV &lt;target&gt; </span>: versión de servicios.</li>
             <li><span class="comando1">nmap -h</span>: ayuda.</li>
-            <li><span class="comando1">man nmap</span>: ayuda.</li>
+            <li><span class="comando1">man nmap</span>: manual.</li>
             <li><span class="comando1">nmap -sS &lt;target&gt; </span>: escaneo TCP SYN.</li>
             <li><span class="comando1">nmap -sU &lt;target&gt; </span>: escaneo UDP.
                 <ol>
-                    <li><span class="comando2">Cuando se envia un paquete UDP abierto, no debería haber respuesta cuando
-                            esto sucede se le refiere como puerto open|filtered por lo que se traduce que podría estar
+                    <li style="width: 95%;"><span class="comando5">Cuando se envia un paquete UDP abierto, no debería
+                            haber respuesta cuando
+                            esto sucede se le refiere como puerto<span class="comando6"> open|filtered</span> por lo que
+                            se traduce que podría estar
                             abirto pero podría tener un cortafuegos </span></li>
                 </ol>
             </li>
@@ -93,10 +97,12 @@
 
             <li><span class="comando1">nmap -sn &lt;target&gt; </span>: barrido ping donde envia un paquete icmp a cada
                 posible direccion ip lo que se traduce al ver que direcciones ip contiene los hots activos y cuales no.
-                <ol>
-                    <li><span class="comando2"> nmap -sn 192.168.0.1-254</span></li>
-                    <li><span class="comando2"> nmap -sn 192.168.0.0/24</span></li>
-                </ol>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >nmap -sn 192.168.0.1-254</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >nmap -sn 192.168.0.0/2</code></pre>
+
+
             </li>
             <li><span class="comando1">nmap --script=&lt;script-name&gt; &lt;target&gt; </span>:ejecuta scripts.</li>
             <li><span class="comando1">nmap --script=intrusive&lt;target&gt;</span>: no seguro: es posible que afecte al
@@ -113,18 +119,39 @@
                 credenciales para ejecutar servicio.</li>
             <li><span class="comando1">nmap --script=discovery&lt;target&gt;</span>: intento de consultar los servicios
                 en ejecución para obtener mas informacion sobre la red.</li>
-            <li><span class="comando2">nmap -p- --open -T5 -v -n &lt;target&gt;</span>: escaneo "lento y rapido".</li>
-            <li><span class="comando2">nmap -p- -sS --min-rate 5000 --open -vvv -n -Pn &lt;target&gt; -oG &lt;name
-                    file&gt;</span>: escaneo mucho mas rapido.</li>
-            <li><span class="comando2">nmap -sC -sV -p&lt;ports&gt; -oN &lt;file&gt;</span>  : lanzar scripts basicos de reconocimiento y detectar la version de servicios que corre en los puertos.</li>
+            <li><span class="comando2">Escaneo "rapido" pero altamente ruidosos.</span></li>
+            <pre><code class="language-bash line-numbers"data-start="1"
+                    >nmap -p- --open -T5 -v -n [target]</code></pre>
+            <li><span class="comando2">Escaneo "super rapido" pero altamente ruidosos.</span></li>
+            <pre><code class="language-bash line-numbers"data-start="1"
+                >nmap -p- -sS --min-rate 5000 --open -vvv -n -Pn &lbrack;target&rbrack; -oG &lbrack;name file&rbrack;</code></pre>
 
-                    
-            <li><span class="comando1">Whatweb&lt;target&gt;</span>: capaz de reconocer las tecnologias utilizadas para sitios web direcciones de correo, web frameforks y base de datos. .</li>
+            <li><span class="comando2">Lanzar scripts basicos de
+                    reconocimiento y detectar la version de servicios que corre en los puertos.</span></li>
+            <pre><code class="language-bash line-numbers"data-start="1"
+                    >nmap -sC -sV -p&lbrack;ports&rbrack; -oN &lbrack;file&rbrack;</code></pre>
+
+            <li><span class="comando2">Lanzar scripts de reconocimiento de vulnerabilidades.</span></li>
+            <pre><code class="language-bash line-numbers"data-start="1"
+                            >nmap --script=vuln -p&lbrack;ports&rbrack;</code></pre>
+
+
+
+            <li><span class="comando1">Whatweb&lbrack;target&rbrack;</span>: capaz de reconocer las tecnologias utilizadas para
+                sitios web direcciones de correo, web frameforks y base de datos.</li>
+            <li>
+                <span class="comando2">Wappalyzer</span>: identifica las tecnologias usadas en los sitios web.
+                <a class="enlace" href="https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/" target="_blank">
+                    <span class="comando1"></span>
+                    Link de descarga
+                </a>
+            </li>
 
         </ul>
     </div>
 
 
+    <script src="/javascript/prism.js"></script>
 
     <mi-footer></mi-footer>
 </body>

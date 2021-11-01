@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="fab fa-linux">HackSheet Bl3Ak</title>
+    <link rel="stylesheet" href="/css/prism.css">
     <link rel="icon" href="/images/logo.ico">
     <link href="/css/estilos.css" rel="stylesheet">
     <link href="/css/button.css" rel="stylesheet">
@@ -44,57 +45,160 @@
         <img class="linux" src="/images/hash.png" alt="logo Linux">
         <h1> Linea de comandos Hash</h1>
         <ul>
-            <li><span class="comando1">Get-FileHash &lt; ruta del archivo&gt; -Algorithm &lt; tipo de hash&gt;</span>:
-                Comprobacion de descarga por medio de autentificacion hash, mediante Windows.
+
+            <span class="pasos">Sitios web de consulta</span>
+            <li><a class="enlace" href="https://crackstation.net/" target="_blank"><span class="comando1"></span>
+                    crackstation</span></a>: sitio web para descifrar hashes.</li>
+            <li> <a class="enlace" href="https://gchq.github.io/CyberChef/" target="_blank"><span>CyberChef</span></a>:
+                desencriptacion.</li>
+
+            <br>
+            <li><span class="comando2">Comprobacion de descarga por medio de autentificacion hash, mediante
+                    Windows.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                            >Get-FileHash &lbrack;path&rbrack; -Algorithm &lbrack;type-hash&rbrack;</code></pre>
+
                 <ol>
                     <li><span class="comando2">SHA1</span></li>
                     <li><span class="comando2">SHA256</span></li>
                     <li><span class="comando2">SHA384</span></li>
                     <li><span class="comando2">SHA512</span></li>
                     <li><span class="comando2">MD5F</span></li>
-                    <span class="pasos">El Comando se debe de ejecutar en porwer Shell</span>
                 </ol>
             </li>
-               
-            <li><span class="comando1">hash-identifier &lt; hash &gt;</span>: identificar el tipo de hash que es.</li>
-            <li><a class="enlace" href="https://crackstation.net/" target="_blank"><span class="comando1"></span>
-                    crackstation</span></a>: sitio web para descifrar hashes.</li>
-            <li> <a class="enlace" href="https://gchq.github.io/CyberChef/" target="_blank"><span>CyberChef</span></a>:
-                desencriptacion.</li>
-            <li><span class="comando1">John The Riper</span>
+            <br>
+            <br>
+            <span class="pasos">Identificador</span>
+
+            <li><span class="comando2">Identifica el tipo de hash que es, por medio de bash.</span>
                 <ol>
-                    <li><span class="comando2">sudo apt install john</span>: instalacion de john the riper.</li>
-                    <li><span class="comando2">/usr/share/wordlists </span>: diccionario de palabras.</li>
-                    <span class="pasos">Cracking hashes</span>
-                    <li><span class="comando2"> john [options] [path to file]</span>
-                        <ol>
-                            <li> <span class="comando3">john --wordlist=/usr/share/wordlists/rockyou.txt
-                                    hash_to_crack.txt </span>
-                            </li>
-                        </ol>
-                    </li>
-                    <li><span class="comando2">john --list=formats | grep -iF "hash" </span>buscar el formato correcto del hast
-                    <ol>
-                        <li>
-                            <span class="comando3">john --list=formats | grep -iF "md5"</span>
-                        </li>
-                    </ol>
-                    </li>
-                   
-                    <li><span class="comando2"> john --format=[format] --wordlist=[path to wordlist] [path to file]</span>
-                        <ol>
-                            <li> <span class="comando3">john --format = raw-md5 --wordlist = / usr / share / wordlists / rockyou.txt hash_to_crack.txt </span>
-                            </li>
-                        </ol>
-                    </li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >hash-identifier &lbrack;hash&rbrack;</code></pre>
+                </ol>
+            </li>
+
+            <li><span class="comando2">Identifica el tipo de hash que es, por medio de python.</span>
+                <ol>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                    >python3 hash-id.py &lbrack;hash&rbrack;</code></pre>
+                </ol>
+            </li>
+
+
+            <br>
+            <br>
+            <span class="pasos">John The Riper</span>
+
+            <li><span class="comando1">John</span>
+                <ol>
+                    <li><span class="comando2">instalacion de john the riper.</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >sudo apt install john</code></pre>
+                    <li><span class="comando2">diccionario de palabras.</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >cd /usr/share/wordlists</code></pre>
+                </ol>
+            </li>
+
+
+
+            <li><span class="comando1">Encontrar el formato del hashes</span>
+                <ol>
+
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >john --list=formats | grep -iF "&lbrack;format&rbrack;"</code></pre>
+                    <pre><code class="language-bash line-numbers" data-start="1"
+                        >john --list=formats | grep -iF "MD5"</code></pre>
 
                 </ol>
 
+            </li>
+
+            <li><span class="comando1">Cracking Hashes</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                    >john --format=raw-&lbrack;format&rbrack; --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <li><span class="comando2">Cracking Windows Authentucation Hashes </span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >john --format=NT --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+                </ol>
+            </li>
+
+            <br>
+            <li><span class="comando1">Cracking /etc/shadow Hashes</span>
+                <ol>
+                    <li><span class="comando3">unshadow</span>: comando
+                    </li>
+                    <li><span class="comando3">[path to passwd]</span>: el archivo contiene la copia del archivo
+                        /etc/passwd que has tomado de la maquina objetivo.
+                    </li>
+                    <li><span class="comando3">[path to shadow]</span>: el archivo contiene la copia del archivo
+                        /etc/shadow que tu hash tomado de la maquina objetivo.</li>
+
+
+                    <li><span class="comando3">File 1 local_passwd</span>: contiene
+                        root:x:0:0::/root:/bin/bash</li>
+
+                    <li><span class="comando3">File 2 local_shadow</span>: contiene
+                        root:$6$2nwjN454g.dv4HN/$m9Z/r2xVfweYVkrr.v5Ft8Ws3/YYksfNwq96UL1FX0OJjY1L6l.DS3KEVsZ9rOVLB/ldTeEL/OIhJZ4GMFMGA0:18576::::::
+                    </li>
+
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >unshadow local_passwd local_shadow &gt; unshadowed.txt</code></pre>
+
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt unshadowed.txt</code></pre>
+
+
+                </ol>
+            </li>
+
+            <br>
+            <li><span class="comando1">Cracking Passwprd Protected Zip Files</span>
+                <ol>
+                    <li><span class="comando3">convertinermos el archivo zip a uno que John the Riper lo pueda
+                            reconocer</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >zip2john &lbrack;zip file&rbrack;  > &lbrack;output file&rbrack;</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+                </ol>
+            </li>
+
+            <br>
+            <li><span class="comando1">Cracking Password RAR Archives </span>
+                <ol>
+                    <li><span class="comando3">convertinermos el archivo rar a uno que John the Riper lo pueda
+                            reconocer</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >rar2john &lbrack;zip file&rbrack;  > &lbrack;output file&rbrack;</code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <li><span class="comando1">Cracking SSH Keys </span>
+                <ol>
+                    <li><span class="comando3"> convertiremos el archivo id_rsa a uno que John the Riper lo pueda
+                            reconocer</span></li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                            >python /usr/share/john/ssh2john.py. &lbrack;id_rsa private key&rbrack; > id_rsa_hash.txt </code></pre>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;id_rsa_hash.txt&rbrack;</code></pre>
+                </ol>
             </li>
         </ul>
     </div>
 
 
+    <script src="/javascript/prism.js"></script>
 
     <mi-footer></mi-footer>
 </body>
