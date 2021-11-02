@@ -50,11 +50,11 @@
 
 
     <div class="main">
-        <img class="linux" src="/images/privilege.png" alt="logoSqlInjection">
+        <img class="linux" src="/images/privilege.png" alt="logo privilege">
         <h1> Privilege Escalation</h1>
         <ul>
 
-            <img class="image" src="/images/Escalada.png" alt="Tipos de escalamientox">
+            <img class="image" src="/images/Escalada.png" alt="Tipos de escalamiento">
             <br>
 
             <li style="width: 95%;"><span class="comando1">Escalada Horizontal</span>: Se puede hacer de un usuario
@@ -69,7 +69,8 @@
 
             <br>
             <br>
-            <li><span class="pasos">Sitios web de consulta</span></li>
+            <div class="pasos">Sitios web de consulta</div>
+            <br>
             <a class="enlace" href="https://gtfobins.github.io/" target="_blank"><span class="comando1"></span>
                 GTFOBins</span></a><span>: Cuando encontramos binarios en nuestra enumeracion,
                 STFOBins es una lista seleccionada de binarios de unix que se puede aprivechar para
@@ -99,40 +100,37 @@
                         A Guide To Linux Privilege Escalation</span></a><span>: Guia para encontrar vectores para
                     escalada de privilegios.</span>
                 </a>
-
                 <br>
                 <br>
                 <br>
-                <span class="pasos">Busqueda de vectores para escalada de privilegios automaticamente</span>
+                <div class="pasos">Busqueda de vectores para escalada de privilegios automaticamente</div>
                 <br>
-                <br>
-                <li><img src="/images/tux.png" /><span class="comando1">Linux</span>
-                </li>
-
+                <img class="center" src="/images/tux.png" alt="linux icon">
+                <div class="titulo">Linux</div>
                 <li><span class="comando1">LinEnum</span>: es un script en bash que ejecuta comando comunes relaciones
-                    con
+                    con la escalacion de privilegios
+                    <a class="enlace" href="https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh"
+                        target="_blank"><span class="comando1"></span>
+                        Link de descarga
+                    </a>
+                </li>
+                <li><span class="comando1">LinPeas</span>: es un script en bash que busca posibles caminos para la
+                    escalacion de privilegios.
                     la escalacion de privilegios <a class="enlace"
-                        href="https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh" target="_blank"><span
-                            class="comando1"></span>
+                        href="https://github.com/carlospolop/PEASS-ng/blob/master/linPEAS/linpeas.sh"
+                        target="_blank"><span class="comando1"></span>
+                        Link de descarga
+
+                    </a>
+                </li>
+                <li><span class="comando1">Linux-exploit-suggester</span>: es un script en bash que busca deficiencias
+                    de
+                    seguridad en un kernel que use linux con exploits conocidos publicamente.<a class="enlace"
+                        href="https://github.com/mzet-/linux-exploit-suggester/blob/master/linux-exploit-suggester.s"
+                        target="_blank"><span class="comando1"></span>
                         Link de descarga
             </span>
             </a>
-            </li>
-
-            <li><span class="comando1">LinPeas</span>: es un script en bash que busca posibles caminos para la
-                escalacion de privilegios.
-                la escalacion de privilegios <a class="enlace"
-                    href="https://github.com/carlospolop/PEASS-ng/blob/master/linPEAS/linpeas.sh" target="_blank"><span
-                        class="comando1"></span>
-                    Link de descarga</span>
-                </a>
-            </li>
-            <li><span class="comando1">Linux-exploit-suggester</span>: es un script en bash que busca deficiencias de
-                seguridad en un kernel que use linux con exploits conocidos publicamente.<a class="enlace"
-                    href="https://github.com/mzet-/linux-exploit-suggester/blob/master/linux-exploit-suggester.s"
-                    target="_blank"><span class="comando1"></span>
-                    Link de descarga</span>
-                </a>
             </li>
             <li><span class="comando1">Linux-smart-enumeration</span>: muestra vectores con posible escalada de
                 privilegios.<a class="enlace"
@@ -148,38 +146,52 @@
                         Link de descarga</span>
                 </a>
             </li>
-
-
             <br>
-            <li><img src="/images/windows.png" /><span class="comando1">Windows</span>
-            </li>
-
-
+            <img class="center" src="/images/windows.png" alt="windows icon">
+            <div class="titulo">Windows</div>
             <li><span class="comando1">PowerUp</span>: busca vectores de escalada de privilegios basadas en
                 Configuraciones incorrectas.<a class="enlace"
-                    href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1" href=""
+                    href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1"
                     target="_blank"><span target="_blank"><span class="comando1"></span>
                         Link de descarga</span>
                 </a>
             </li>
             <li><span class="comando1">WinPeas</span>: busca vectores de escalada de privilegios.<a class="enlace"
-                    href="https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS/winPEASexe/binaries" href=""
+                    href="https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS/winPEASexe/binaries"
                     target="_blank"><span target="_blank"><span class="comando1"></span>
                         Link de descarga</span>
                 </a>
             </li>
-
-
-
-            <br>
-            <br>
-            <span class="pasos">Busqueda de vectores para escalada de privilegios manualmente</span>
-
-            <br>
-            <br>
-            <li><img src="/images/tux.png" /><span class="comando1">Linux</span>
+            <li><span class="comando1">Windows-Exploit-Suggester</span>: busca vectores de escalada de privilegios.<a
+                    class="enlace"
+                    href="https://github.com/AonCyberLabs/Windows-Exploit-Suggester/blob/master/windows-exploit-suggester.py"
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
                 <br>
+                <span class="comando2">Actualizar la base de datos antes de ejecutar el comando.</span>
+                <pre><code class="language-python line-numbers"data-start="1"
+                    >windows-exploit-suggester.py –update</code></pre>
                 <br>
+                <span class="comando2">Ejecutar el archivo y guardarlo en un archivo de texto plano.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                        >windows-exploit-suggester.py --database 2021-09-21-mssb.xls --systeminfo sysinfo_output.txt</code></pre>
+
+            </li>
+            <li><span class="comando1">Windows-Exploit-Suggester Next Generation (WES-NG)</span>: busca vectores de
+                escalada de privilegios.<a class="enlace" href="https://github.com/bitsadmin/wesng"
+                    target="_blank"><span target="_blank"><span class="comando1"></span>
+                        Link de descarga</span>
+                </a>
+            </li>
+            <br>
+            <br>
+            <div class="pasos">Busqueda de vectores para escalada de privilegios manualmente</div>
+            <br>
+            <br>
+            <img class="center" src="/images/tux.png" alt="linux icon">
+            <div class="titulo">Linux</div>
+
             <li><span class="comando2">Regresa el nombre del host, pero en algunos casos, puede proporcionar informacion
                     sobre la funcion del sistema de destino dentre de la red.</span>
                 <pre><code class="language-bash line-numbers"data-start="1"
@@ -262,6 +274,7 @@
                     <li><span class="comando3">Command/Shell</span>: la ruta absoluta de un commando o
                         shell (/bin/bash).</li>
                 </ol>
+            </li>
             <li><span class="comando2">Si encontramos un archivo de escritura /etc/passwd, podemos escribir una
                     nueva entrada de linea de acuero con la formula anterior y crear un nuevo usuario con
                     privilegios.</span>
@@ -467,12 +480,148 @@
                 <ol>
                     <pre><code class="language-bash line-numbers"data-start="1"
             >cat /etc/exports</code></pre>
-                    <li>Verificar si esta la opcion no_root_squash, donde si encontramos que esta presente 
+                    <li>Verificar si esta la opcion no_root_squash, donde si encontramos que esta presente
                         en un recurso compartido de escritura, podemoscrear un ejecutable con el bit SUID configurado
-                    y ejecutarlo en el sistema de destino.</li>
+                        y ejecutarlo en el sistema de destino.</li>
                 </ol>
             </li>
+            <br>
+            <br>
+            <img class="center" src="/images/windows.png" alt="windows icon">
+            <div class="titulo">Windows</div>
+            <br>
+            <span class="comando1">Enumeracion de usuarios</span>
+            <li><span class="comando2">Privilegios del usuario actual.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >whoami /priv</code></pre>
+            </li>
+            <li><span class="comando2">Lista de usuario.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >net users</code></pre>
+            </li>
+            <li><span class="comando2">Lista detallada del usuario.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >net user &lbrack;username&rbrack;</code></pre>
+            </li>
+            <li><span class="comando2">Otros usuario iniciarion sesion.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >qwinsta</code></pre>
+            </li>
+            <li><span class="comando2">Grupos de usuarios definidos en el sistema.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >net localgroup</code></pre>
+            </li>
+            <li><span class="comando2">Enumerar los miembos de un grupo especifico.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >net localgroup &lbrack;groupname&rbrack;</code></pre>
+            </li>
 
+            <br>
+            <span class="comando1">Recopilacion de informacion del sistema</span>
+            <li><span class="comando2">Devolvera una descripcion general del sistema de destino.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >systeminfo</code></pre>
+            </li>
+            <li><span class="comando2">En algunos objetivos la cantidad de informacion puede ser abrumadora y por eso es
+                    recomendable usar grep.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >systeminfo | findstr /B /C:"OS Name" /C:"OS Version"</code></pre>
+            </li>
+            <li><span class="comando2">Nombre del sistema.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >hostname</code></pre>
+            </li>
+            <br>
+            <span class="comando1">Busqueda de archivos</span>
+            <li><span class="comando2">Encontrar archivos o carpetas.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >findstr /si &lbrack;name&rbrack; &ast;.&lbrack;extension&rbrack;</code></pre>
+                <ol>
+                    <li><span class="comando3">/si</span>: busca en el directorio actual y todos los subdirectorios y
+                        omite los caracteres al buscar la cadena.</li>
+                    <li><span class="comando3">&lbrack;name&rbrack;</span>: nombre del archivo que se quiera buscar.
+                    </li>
+                    <li><span class="comando3">*.&lbrack;extension&rbrack;</span>: nombre de la extencion a buscar.
+                    </li>
+                </ol>
+            </li>
+            <br>
+            <span class="comando1">Nivel de parche</span>
+            <li><span class="comando2">Enumerar las actualizaciones instaladas en el sistema operativo.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >wmic qfe get Caption,Description,HotFixID,InstalledOn</code></pre>
+                <ol>
+                    <li>
+                        <span class="comando3"></span>wmic es una herramienta poderosa que tambien nos permite buscar
+                        vulnerabilidades de ruta de servicio no citadas, sin embargo esta obsoleto en Windows 10,
+                        version 21H1 y la
+                        version del 21H1 en Windows Server, por lo que se recomienda usar cmdlet
+                    </li>
+                </ol>
+            </li>
+            <br>
+            <span class="comando1">Conexiones de red</span>
+            <li><span class="comando2">Enumerar todos los puertos de escucha en el sistema.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >netstat -ano</code></pre>
+                <ol>
+                    <li><span class="comando3">-a</span>: muestra todas la conexiones activas y los puertos de escucha
+                        en el sistema.</li>
+                    <li><span class="comando3">-n</span>: evita la resolucion de nombres, las direcciones IP y los
+                        puertos se muestran con numeros en lugar de intentar resolver nombres mediante DNS.</li>
+                    <li><span class="comando3">-o</span>: muestra el ID del proceso usando cada conexion listada. </li>
+                </ol>
+            </li>
+            <br>
+            <span class="comando1">Tareas programadas</span>
+            <li><span class="comando2">Consulta de tareas programadas.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >schtasks /query /fo LIST /v</code></pre>
+            </li>
+            <br>
+            <span class="comando1">Drivers</span>
+            <li><span class="comando2">Enumerar los controladores disponibles en el sistema de destino donde puede que
+                    se encuentre vectores de escalamiento de privilegios.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >driverquery</code></pre>
+            </li>
+            <br>
+            <span class="comando1">Antivirus</span>
+            <li><span class="comando2">Enumerar los servicios de antivirus Windows Defender.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >sc query windefend</code></pre>
+            </li>
+            <li><span class="comando2">Enumerar los servicios de antivirus que corren en el sistema.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >sc queryex type=service</code></pre>
+            </li>
+            <li><span class="comando5">Ejecutar en CMD</span></li>
+
+            <br>
+            <span class="comando1">Software vulnerable</span>
+            <li><span class="comando2">Enumera el software instalado.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >wmic product</code></pre>
+            </li>
+            <li><span class="comando2">Filtrar la salida para obtener una salida mas limpia.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >wmic product get name,version,vendor</code></pre>
+            </li>
+            <li><span class="comando2">Enumera los servicios.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >wmic service list brief</code></pre>
+            </li>
+            <li><span class="comando2">Enumera los servicios pero filtrando con grep la salida para que sea mas
+                    entendible.</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >wmic service list brief | findstr  "Running"</code></pre>
+            </li>
+            <li><span class="comando2">Si se necesita mas informacion de la salida del comando wmic (correr en CMD).</span>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                    >sc qc &lbrack;name service&rbrack;</code></pre>
+                <pre><code class="language-powershell line-numbers"data-start="1"
+                        >sc qc windefend</code></pre>
+            </li>
         </ul>
     </div>
 

