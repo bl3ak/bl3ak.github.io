@@ -43,7 +43,7 @@
 
     <div class="main">
         <img class="linux" src="/images/hash.png" alt="logo Linux">
-        <h1> Linea de comandos Hash</h1>
+        <h1> Linea de comandos Hash y Binarios</h1>
         <ul>
 
             <span class="pasos">Sitios web de consulta</span>
@@ -124,7 +124,7 @@
                 </ol>
             </li>
             <br>
-            <li><span class="comando2">Cracking Windows Authentucation Hashes </span>
+            <li><span class="comando1">Cracking Windows Authentication Hashes </span>
                 <ol>
                     <pre><code class="language-bash line-numbers"data-start="1"
                         >john --format=NT --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;file&rbrack;</code></pre>
@@ -196,6 +196,105 @@
                             >john --wordlist=/usr/share/wordlists/rockyou.txt &lbrack;id_rsa_hash.txt&rbrack;</code></pre>
                 </ol>
             </li>
+
+            <br>
+            <br>
+            <span class="pasos">Hydra</span>
+            <br>
+            <li><span class="comando1">Cracking FTP </span>
+                <ol>
+                    <li><span class="comando3"> usar hydra para realizar fuerza bruta en el descubrimiento de
+                            credenciales de FTP</span></li>
+                    <pre><code class="language-python line-numbers"data-start="1"
+                            >hydra -l &lbrack;USER&rbrack; -P &lbrack;WORDLIST&rbrack; ftp://&lbrack;TARGET&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Cracking SSH </span>
+                <ol>
+                    <li><span class="comando3"> usar hydra para realizar fuerza bruta en el descubrimiento de
+                            credenciales de SSH</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >hydra -l &lbrack;USER&rbrack; -P &lbrack;WORDLIST&rbrack; &lbrack;TARGET&rbrack; -t 4 ssh</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Cracking FORMS </span>
+                <ol>
+                    <li><span class="comando3"> usar hydra para realizar fuerza bruta en el descubrimiento de
+                            credenciales en formularios web</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                                >hydra -l &lbrack;USER&rbrack; -P &lbrack;WORDLIST&rbrack; &lbrack;TARGET&rbrack; http-post-form "/:username=^USER^&password=^PASS^:F=incorrect" -V</code></pre>
+                    <li><span class="comando2">-l</span>: nombre del usuario </li>
+                    <li><span class="comando2">-P</span>: nombre de la lista de credenciales </li>
+                    <li><span class="comando2">http-post-form</span>: indica el tipo de formato (POST) </li>
+                    <li><span class="comando2">:username</span>: el campo del formulario donde se introduce el nombre
+                        del usuario </li>
+                    <li><span class="comando2">^USER^</span>: le dices a Hydra que "USER" el nombre de usuario </li>
+                    <li><span class="comando2">^USER^</span>: le dices a Hydra que "USER" el nombre de usuario </li>
+                    <li><span class="comando2">password</span>: el nombre del campo donde se introduce el password </li>
+                    <li><span class="comando2">^PASS^</span>: le dices a Hydra que use la lista use la lista de password
+                        suministradas </li>
+                    <li><span class="comando2">F=incorrect</span>: si esta palabra aparece en la pagina es incorrecta
+                    </li>
+                    <li><span class="comando2">-V</span>: salida de informacion para cada error </li>
+                    <li><span class="comando3">Ejemplo</span></li>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                        >hydra -l bob -P /usr/share/wordlists/rockyou.txt 10.10.10.1 http-post-form "/login:username=^USER^&password=^PASS^:F=Your username or password are incorrect." -V</code></pre>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Hashcat</span>
+            <br>
+            <li><span class="comando1">Ver la informacion de metadatos de multiples archivos.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >hashcat -m &lbrack;hash-type&rbrack; -a 3 &lbrack;FILE/HASH&rbrack; &lbrack;WORDLIST PATH&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Binwalk</span>
+            <br>
+            <li><span class="comando1">Analizar binarios</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >binwalk &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Extracion de datos del binarios</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >binwalk -e &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Steghide</span>
+            <br>
+            <li><span class="comando1">Ver la informacion que contiene el archivo ya sea imagen o archivos de
+                    audio(JPEG, BMP, WAV y AU)</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >steghide info &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando1">Extraer datos secretos del archivo y declara al archivo stego</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >steghide extract -sf &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+            <br>
+            <br>
+            <span class="pasos">Exiftool</span>
+            <br>
+            <li><span class="comando1">Ver la informacion de metadatos de multiples archivos.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                            >exiftool -v &lbrack;FILE&rbrack;</code></pre>
+                </ol>
+            </li>
+
         </ul>
     </div>
 

@@ -139,6 +139,13 @@ h1 {
         margin: 15px;
         padding-top: 100px;
     }
+    .pasos{
+        color: #fdf902;
+        font-weight: 900;
+        font-size: 15px;
+        font-family: fontawesome;
+        text-align: center;
+    }
     .comando2 {
         font-weight: 700;
     }
@@ -154,4 +161,5 @@ h1 {
         -webkit-transform: scale(2);
         transform: scale(2);
     }
+   
 }

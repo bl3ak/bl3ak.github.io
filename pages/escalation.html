@@ -248,6 +248,13 @@
                 <pre><code class="language-bash line-numbers"data-start="1"
                     >id</code></pre>
             </li>
+
+            <li><span class="comando2">Se mostrara los hashes de credenciales de los usuarios.</span>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >cat /etc/shadow</code></pre>
+                <pre><code class="language-bash line-numbers"data-start="1"
+                    >ls -l /etc/shadow</code></pre>
+            </li>
             <li><span class="comando2">Se mostrara los usuarios junto con sus credenciales.</span>
                 <pre><code class="language-bash line-numbers"data-start="1"
                     >cat /etc/passwd</code></pre>
@@ -402,11 +409,18 @@
                 >find / -perm -o x -type d 2>/dev/null</code></pre>
                 </ol>
             </li>
-            <li><span class="comando2">Busqueda de archivos con el bit SUID, lo que nos permite ejecutar el archivo con
+            <li><span class="comando5">Busqueda de archivos con el bit SUID, lo que nos permite ejecutar el archivo con
                     un nivel de privilegios superior al del usuario actual.</span>
                 <ol>
                     <pre><code class="language-bash line-numbers"data-start="1"
                 >find / -perm -u=s -type f 2>/dev/null</code></pre>
+                </ol>
+            </li>
+            <li><span class="comando5">Busqueda de todos los ejecutables SUID, SGID en la maquina y si tenemos suerte
+                    podemos encontrar programas con sus versiones que se pueden explotar.</span>
+                <ol>
+                    <pre><code class="language-bash line-numbers"data-start="1"
+                >find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null</code></pre>
                 </ol>
             </li>
 
@@ -616,7 +630,8 @@
                 <pre><code class="language-powershell line-numbers"data-start="1"
                     >wmic service list brief | findstr  "Running"</code></pre>
             </li>
-            <li><span class="comando2">Si se necesita mas informacion de la salida del comando wmic (correr en CMD).</span>
+            <li><span class="comando2">Si se necesita mas informacion de la salida del comando wmic (correr en
+                    CMD).</span>
                 <pre><code class="language-powershell line-numbers"data-start="1"
                     >sc qc &lbrack;name service&rbrack;</code></pre>
                 <pre><code class="language-powershell line-numbers"data-start="1"
